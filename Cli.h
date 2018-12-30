@@ -5,29 +5,32 @@
 #include <map>
 #include "parser.h"
 
-typedef void (*exec)(int argc, char ** argv);//??
+
+
+typedef void (*exec)(int argc, char ** argv);
+typedef struct
+{
+    int argc;
+    char ** argv;
+}args;
 
 class cli
 {
 public:
 
-    cli(exec);
-    void run();
+    void run(args *);
     inline void readLine();
     inline bool parseCommand();
-    inline void callCommand();
-    ~cli();
+    ~cli(){};
 
 private:
 
     char line[1000];
-    int * argc;
+    int argc;
     char *argv[20];
     Parser pars;
     exec execFunc;
 
-    cli(const cli &);
-    void operator=(const cli &);
 };
 
 void cli::readLine()
@@ -37,13 +40,9 @@ void cli::readLine()
 
 bool cli::parseCommand()
 {
-    pars.parseCommand(argc, argv, line);
+    pars.parseCommand(&argc, argv, line);
     return true;
 }
 
-void cli::callCommand()
-{
-    execFunc(*argc, argv);
-}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_CLI_H

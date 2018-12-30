@@ -1,5 +1,10 @@
-//
-// Created by hodaya on 12/28/18.
-//
-
 #include "ActiveDna.h"
+
+
+void activeDna::addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq)
+{
+
+    addDnaSeqById(idIdentfier, seq);
+    addDnaSeqByName(nameIdentfier, seq);
+
+}

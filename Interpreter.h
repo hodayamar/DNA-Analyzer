@@ -3,6 +3,8 @@
 
 #include "Cli.h"
 #include "Icommand.h"
+#include "MemoryCtrl.h"
+#include "Idna.h"
 #include "New.h"
 
 class interpreter
@@ -12,12 +14,14 @@ public:
     interpreter();
     ~interpreter();
     void run();
-    static void execCommand(int argc, char *argv[]);
+    void execCommand();
 
 private:
 
-    cli * m_cli;
+    cli m_cli;
+    memoryCtrl m_memoryCtrl;
     static std::map<char *, exec> commands;
+    args * m_args;
 
 };
 

@@ -6,12 +6,6 @@
 #include "Idna.h"
 #include "sharedPtr.h"
 
-typedef struct
-{
-    int id;
-    char * name;
-
-} idName;
 
 typedef sharedPtr<Idna> IDNAp;
 
@@ -19,21 +13,35 @@ class activeDna
 {
 public:
 
-    activeDna();
-    ~activeDna();
+    activeDna(){};
+//    ~activeDna();
 
-    inline bool addDnaSeqById(char* identfier, IDNAp seq);
-    inline bool addDnaSeqByName(int identfier, IDNAp seq);
+    void addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq);
+
+    inline void addDnaSeqById(int identfier, IDNAp seq);
+    inline void addDnaSeqByName(char * nameIdentfier, IDNAp seq);
 
     inline IDNAp getDnaSeqById(char* identfier);
-    inline IDNAp addDnaSeqByName(int identfier);
+    inline IDNAp getDnaSeqByName(int identfier);
 
-    inline bool deleteDnaSeqById(char* identfier);
-    inline bool deleteDnaSeqByName(int identfier);
+    inline bool deleteDnaSeq(char* identfier);
 
 private:
 
-    static std::map<idName, IDNAp> seqDna;
+    std::map<int, IDNAp> seqDnaById;
+    std::map<char *, IDNAp> seqDnaByName;
 };
+
+void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)
+{
+    seqDnaById.insert( std::pair<int, IDNAp>(idIdentfier, seq) );
+}
+
+void activeDna::addDnaSeqByName(char * nameIdentfier, IDNAp seq)
+{
+    seqDnaByName.insert( std::pair<char *, IDNAp>(nameIdentfier, seq) );
+}
+
+
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_ACTIVEDNA_H

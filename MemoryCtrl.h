@@ -7,12 +7,12 @@ class memoryCtrl
 {
 public:
 
-    memoryCtrl();
-    ~memoryCtrl();
+//    memoryCtrl();
+//    ~memoryCtrl();
 
-    bool addDnaSeq(char* identfier, char*  seq);
-    IDNAp getLength(char* identfier);
-    bool deleteDnaSeq(char* identfier);
+    void addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq);
+    IDNAp getLength(char * idIdentfier, char * nameIdentfier);
+    bool deleteDnaSeq(char * idIdentfier, char * nameIdentfier);
 
 private:
 

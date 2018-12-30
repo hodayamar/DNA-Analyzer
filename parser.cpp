@@ -1,24 +1,25 @@
 #include "parser.h"
-
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
 void Parser::parseCommand(int * argc, char ** argv, char * line)
 {
-    int cntr = 0;
-    while (*line != '\0')
+    const char delim[]={'\t','\n',' '};
+    int i;
+    i= 0;
+
+    argv[i] = strtok(line, " ");
+
+    while(argv[i] != NULL)
     {
-        while (*line == ' ' || *line == '\t' || *line == '\n')
-            *line++ = '\0';
-
-        *argv++ = line;
-        ++cntr;
-
-
-        while (*line != '\0' && *line != ' ' &&
-               *line != '\t' && *line != '\n')
-
-            line++;
+        argv[++i]= strtok(NULL, delim);
     }
+    if(line[strlen(line - 1)] == '\n')
+        line[strlen(line - 1)] = '\0';
 
-    *argv = '\0';
-    * argc = cntr;
+    *argc = i;
+
 }

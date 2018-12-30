@@ -1,21 +1,26 @@
 #include "Interpreter.h"
 #include <cstring>
 
-void interpreter::execCommand(int argc, char *argv[])
+void interpreter::execCommand()
 {
-    if(strcmp(argv[0],"new")!=0)
+    if(strcmp(m_args->argv[0], "new") == 0)
     {
         Icommand* newC = new New();
-        newC->run(argc,argv);
+        newC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+}
 
-}
 void interpreter::run(){
-    m_cli->run();
+    while(true)
+    {
+        m_cli.run(m_args);
+        execCommand();
+    }
 }
+
 interpreter::interpreter()
 {
-    m_cli = new cli(&execCommand);
+    m_args = new args();
 }
 
 

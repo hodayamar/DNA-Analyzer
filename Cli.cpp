@@ -1,21 +1,15 @@
 #include "Cli.h"
 #include <iostream>
 
-cli::cli(exec execFuncToRun)
+
+
+void cli::run(args * m_args)
 {
-    execFunc = execFuncToRun;
+    std::cout << ">>>";
+    readLine();
+    parseCommand();
 
-}
-
-void cli::run()
-{
-    while(true)
-    {
-        std::cout << "I'm dumb>>>";
-        readLine();
-        parseCommand();
-        callCommand();
-    }
-
+    m_args->argc = argc;
+    m_args->argv = argv;
 }
 

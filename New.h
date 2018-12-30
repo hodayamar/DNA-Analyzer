@@ -8,7 +8,7 @@ class New : public Icommand
 public:
 
    ~New();
-   void run(int argc, char * argv[20]);
+    void run(int argc, char ** argv, memoryCtrl &);
 
 };
 

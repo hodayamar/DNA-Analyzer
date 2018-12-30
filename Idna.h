@@ -1,14 +1,16 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_IDNA_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_IDNA_H
 
+#include "Nucleotide.h"
+
 class  Idna
 {
 public:
 
-    virtual ~Idna() = 0;
+    virtual ~Idna(){};
 
     virtual int getLength()const = 0;
-    virtual char operator[](int)const = 0;//Nucleotide?
+    virtual Nucleotide operator[](int)const = 0;//Nucleotide?
 
 //protected:
 //
