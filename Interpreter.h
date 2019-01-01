@@ -6,6 +6,7 @@
 #include "MemoryCtrl.h"
 #include "Idna.h"
 #include "New.h"
+#include "Print.h"
 
 typedef void (*exec)(int argc, char ** argv);
 

@@ -9,18 +9,15 @@ void DnaSequence::setToDefualtName()
     ss << defName << idSeq;
     std::string sService = ss.str();
 
-    char *cstr = new char[sService.length() + 1];
-    strcpy(cstr, sService.c_str());
+    nameSeq = sService;
 
-    nameSeq = cstr;
-    std::cout << nameSeq << std::endl;
-
-    delete [] cstr;
+    std::cout << "nameSeq: " << nameSeq <<std::endl;
 }
 
 DnaSequence::DnaSequence(const char* const C_sequence, char * name)
 {
     idSeq = autoInc++;
+    std::cout << "idSeq: " << idSeq << std::endl;
 
     if(name) {
         nameSeq = name;
@@ -28,7 +25,6 @@ DnaSequence::DnaSequence(const char* const C_sequence, char * name)
     else {
 
         setToDefualtName();
-
     }
 
 
@@ -90,5 +86,14 @@ Nucleotide DnaSequence::operator[](int index)const
 DnaSequence::~DnaSequence()
 {
     delete[] sequence;
+}
+
+int DnaSequence::getIdSeq()const
+{
+    return idSeq;
+}
+std::string DnaSequence::getNameSeq()const
+{
+    return nameSeq;
 }
 

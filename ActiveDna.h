@@ -7,6 +7,7 @@
 #include "sharedPtr.h"
 
 
+
 typedef sharedPtr<Idna> IDNAp;
 
 class activeDna
@@ -37,7 +38,7 @@ private:
 
 void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)
 {
-    seqDnaById.insert( std::pair<int, IDNAp>(idIdentfier, seq) );
+    seqDnaById.insert( std::pair<int, IDNAp>(seq->getIdSeq(), seq) );
 }
 
 void activeDna::addDnaSeqByName(char * nameIdentfier, IDNAp seq)
@@ -46,15 +47,26 @@ void activeDna::addDnaSeqByName(char * nameIdentfier, IDNAp seq)
 }
 
 
-
+/////CHECK IF EMPTY
 IDNAp activeDna::getDnaSeqById(int identfier)
 {
-    return seqDnaById.find(identfier)->second;
+
+    std::cout <<  "activeDna ------ identfier: " << identfier << std::endl;
+    IDNAp tmp = seqDnaById.find(identfier)->second;
+
+    std::cout <<  "activeDna ------ tmp: " << tmp->getLength() << std::endl;
+
+    return tmp;
 }
 
 IDNAp activeDna::getDnaSeqByName(char* identfier)
 {
-    return seqDnaByName.find(identfier)->second;
+    std::cout <<  "activeDna ------ identfier: " << identfier << std::endl;
+    IDNAp tmp = seqDnaByName.find(identfier)->second;
+
+    std::cout <<  "activeDna ------ tmp: " << tmp->getLength() << std::endl;
+
+    return tmp;
 }
 
 

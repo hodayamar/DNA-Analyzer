@@ -3,12 +3,16 @@
 
 #include "Icommand.h"
 
+
 class Print : public Icommand
 {
 public:
 
     ~Print();
-    void run(int argc, char ** argv, memoryCtrl &);
+
+
+    void run(int, char **, memoryCtrl & );
+
 
 };
 

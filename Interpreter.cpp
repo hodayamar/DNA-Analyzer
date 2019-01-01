@@ -22,6 +22,11 @@ void interpreter::execCommand()
         Icommand* newC = new New();
         newC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+    else if(strcmp(m_args->argv[0], "print") == 0)
+    {
+        Icommand* printC = new Print();
+        printC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

@@ -15,6 +15,8 @@ public:
 
     int getLength()const;
     Nucleotide operator[](int)const;
+    int getIdSeq()const;
+    std::string getNameSeq()const;
 
 
 private:
@@ -24,6 +26,8 @@ private:
 //    DnaSequence(const DnaSequence&, int, int);
     void init_sequence(const char* const);
     void setToDefualtName();
+
+
 
 
 };

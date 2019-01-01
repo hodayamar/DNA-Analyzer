@@ -5,13 +5,20 @@ void memoryCtrl::addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq)
     m_activeDna.addDnaSeq(idIdentfier, nameIdentfier, seq);
 }
 
-IDNAp getDnaSeq(int idIdentfier = 0, char * nameIdentfier = NULL)
+IDNAp memoryCtrl::getDnaSeq(int idIdentfier, char * nameIdentfier)
 {
-    if(idIdentfier)
-        m_activeDna.getDnaSeqById(idIdentfier);
+    IDNAp temp;
+    if(idIdentfier != -1)
+    {
+        std::cout << "idIdentfier = " << idIdentfier << std::endl;
+        temp = m_activeDna.getDnaSeqById(idIdentfier);
+    }
+    else if(nameIdentfier){
 
-    else if(nameIdentfier)
-        m_activeDna.getDnaSeqByName(nameIdentfier);
+        std::cout << "nameIdentfier = " << nameIdentfier << std::endl;
+        temp = m_activeDna.getDnaSeqByName(nameIdentfier);
 
+    }
 
+    return temp;
 }

@@ -11,12 +11,15 @@ public:
 
     virtual int getLength()const = 0;
     virtual Nucleotide operator[](int)const = 0;
+    virtual int getIdSeq()const = 0;
+    virtual std::string getNameSeq()const = 0;
+
 
 
 
 protected:
 
-    char * nameSeq;
+    std::string nameSeq;
     int idSeq;
     static int autoInc;
 

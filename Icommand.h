@@ -4,6 +4,8 @@
 #include "sharedPtr.h"
 #include "MemoryCtrl.h"
 #include "Dna.h"
+#include <cstdlib> //the standard C library header
+#include <string>
 
 typedef sharedPtr<Idna> IDNAp;
 
