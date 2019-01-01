@@ -3,17 +3,19 @@
 
 #include <cstring>
 #include "Idna.h"
+#define defName "seq"
 
 class DnaSequence : public Idna
 {
 
 public:
 
-    explicit DnaSequence(const char* const char_sequence);
+    explicit DnaSequence(const char* const char_sequence, char *);
     ~DnaSequence();
 
     int getLength()const;
     Nucleotide operator[](int)const;
+
 
 private:
 
@@ -21,6 +23,8 @@ private:
     unsigned long len;
 //    DnaSequence(const DnaSequence&, int, int);
     void init_sequence(const char* const);
+    void setToDefualtName();
+
 
 };
 

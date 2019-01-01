@@ -1,7 +1,37 @@
 #include "Dna.h"
+#include <sstream>
 
-DnaSequence::DnaSequence(const char* const C_sequence)
+int DnaSequence::Idna::autoInc = 0;
+
+void DnaSequence::setToDefualtName()
 {
+    std::stringstream ss;
+    ss << defName << idSeq;
+    std::string sService = ss.str();
+
+    char *cstr = new char[sService.length() + 1];
+    strcpy(cstr, sService.c_str());
+
+    nameSeq = cstr;
+    std::cout << nameSeq << std::endl;
+
+    delete [] cstr;
+}
+
+DnaSequence::DnaSequence(const char* const C_sequence, char * name)
+{
+    idSeq = autoInc++;
+
+    if(name) {
+        nameSeq = name;
+    }
+    else {
+
+        setToDefualtName();
+
+    }
+
+
     sequence = NULL;
 
     try {
@@ -13,7 +43,6 @@ DnaSequence::DnaSequence(const char* const C_sequence)
         throw std::invalid_argument("invalid_argument");
     }
 }
-
 
 void DnaSequence::init_sequence(const char* const char_sequence)
 {
@@ -62,3 +91,4 @@ DnaSequence::~DnaSequence()
 {
     delete[] sequence;
 }
+

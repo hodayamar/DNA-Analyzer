@@ -11,7 +11,7 @@ public:
 //    ~memoryCtrl();
 
     void addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq);
-    IDNAp getLength(char * idIdentfier, char * nameIdentfier);
+    IDNAp getDnaSeq(int idIdentfier, char * nameIdentfier);
     bool deleteDnaSeq(char * idIdentfier, char * nameIdentfier);
 
 private:

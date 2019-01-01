@@ -7,7 +7,7 @@
 
 
 
-typedef void (*exec)(int argc, char ** argv);
+
 typedef struct
 {
     int argc;
@@ -29,7 +29,7 @@ private:
     int argc;
     char *argv[20];
     Parser pars;
-    exec execFunc;
+
 
 };
 

@@ -1,6 +1,20 @@
 #include "Interpreter.h"
 #include <cstring>
 
+
+interpreter::interpreter()
+{
+    m_args = new args();
+}
+
+void interpreter::run(){
+    while(1)
+    {
+        m_cli.run(m_args);
+        execCommand();
+    }
+}
+
 void interpreter::execCommand()
 {
     if(strcmp(m_args->argv[0], "new") == 0)
@@ -10,17 +24,5 @@ void interpreter::execCommand()
     }
 }
 
-void interpreter::run(){
-    while(true)
-    {
-        m_cli.run(m_args);
-        execCommand();
-    }
-}
-
-interpreter::interpreter()
-{
-    m_args = new args();
-}
 
 

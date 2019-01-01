@@ -8,7 +8,7 @@ New::~New()
 
 void New::run(int argc, char ** argv, memoryCtrl & memctrl)
 {
-    IDNAp newDna(new DnaSequence (argv[1]));
+    IDNAp newDna(new DnaSequence (argv[1], argv[2]));
     memctrl.addDnaSeq(1, argv[2], newDna );
     std::cout << "im in new cmd" << std::endl;
 }

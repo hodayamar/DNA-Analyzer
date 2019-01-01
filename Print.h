@@ -1,6 +1,16 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PRINT_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PRINT_H
 
+#include "Icommand.h"
+
+class Print : public Icommand
+{
+public:
+
+    ~Print();
+    void run(int argc, char ** argv, memoryCtrl &);
+
+};
 
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PRINT_H

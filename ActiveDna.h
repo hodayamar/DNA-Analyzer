@@ -13,7 +13,7 @@ class activeDna
 {
 public:
 
-    activeDna(){};
+//    activeDna(){};
 //    ~activeDna();
 
     void addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq);
@@ -21,8 +21,8 @@ public:
     inline void addDnaSeqById(int identfier, IDNAp seq);
     inline void addDnaSeqByName(char * nameIdentfier, IDNAp seq);
 
-    inline IDNAp getDnaSeqById(char* identfier);
-    inline IDNAp getDnaSeqByName(int identfier);
+    inline IDNAp getDnaSeqById(int identfier);
+    inline IDNAp getDnaSeqByName(char* identfier);
 
     inline bool deleteDnaSeq(char* identfier);
 
@@ -30,6 +30,9 @@ private:
 
     std::map<int, IDNAp> seqDnaById;
     std::map<char *, IDNAp> seqDnaByName;
+
+    std::map<char *, IDNAp>::iterator seqByName;
+    std::map<int, IDNAp>::iterator seqById;
 };
 
 void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)
@@ -40,6 +43,18 @@ void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)
 void activeDna::addDnaSeqByName(char * nameIdentfier, IDNAp seq)
 {
     seqDnaByName.insert( std::pair<char *, IDNAp>(nameIdentfier, seq) );
+}
+
+
+
+IDNAp activeDna::getDnaSeqById(int identfier)
+{
+    return seqDnaById.find(identfier)->second;
+}
+
+IDNAp activeDna::getDnaSeqByName(char* identfier)
+{
+    return seqDnaByName.find(identfier)->second;
 }
 
 

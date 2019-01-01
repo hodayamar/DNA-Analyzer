@@ -7,6 +7,8 @@
 #include "Idna.h"
 #include "New.h"
 
+typedef void (*exec)(int argc, char ** argv);
+
 class interpreter
 {
 public:
