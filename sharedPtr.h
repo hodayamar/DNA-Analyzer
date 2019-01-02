@@ -90,7 +90,7 @@ sharedPtr<T>::sharedPtr(const sharedPtr& ptr)
         :refCount(ptr.refCount),
          m_ptr(ptr.m_ptr)
 {
-    std::cout << "template<typename T>cpytor" << std::endl;
+//    std::cout << "template<typename T>cpytor" << std::endl;
 
     if(isvalid())
         (*refCount)++;
@@ -102,7 +102,7 @@ sharedPtr<T>::sharedPtr(const sharedPtr<U>& ptr)
         :refCount(ptr.refCount),
          m_ptr(ptr.m_ptr)
 {
-    std::cout << "template<typename U>cpytor" << std::endl;
+//    std::cout << "template<typename U>cpytor" << std::endl;
     if(isvalid())
         (*refCount)++;
 }

@@ -14,12 +14,12 @@ void DnaSequence::setToDefualtName()
     std::cout << "nameSeq: " << nameSeq <<std::endl;
 }
 
-DnaSequence::DnaSequence(const char* const C_sequence, char * name)
+DnaSequence::DnaSequence(const char* const C_sequence, std::string name)
 {
     idSeq = autoInc++;
     std::cout << "idSeq: " << idSeq << std::endl;
 
-    if(name) {
+    if(name.compare("")) {
         nameSeq = name;
     }
     else {

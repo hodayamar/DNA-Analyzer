@@ -7,19 +7,28 @@
 
 void Parser::parseCommand(int * argc, char ** argv, char * line)
 {
-    const char delim[]={'\t','\n',' '};
-    int i;
-    i= 0;
 
-    argv[i] = strtok(line, " ");
+    int i = -1;
+    char ** argvTemp = argv;
 
-    while(argv[i] != NULL)
+    while (*line != '\0')
     {
-        argv[++i]= strtok(NULL, delim);
+        while (*line == ' ' || *line == '\t' || *line == '\n')
+        {
+            *line++ = '\0';
+            ++i;
+        }
+
+
+        *argv++ = line;
+
+        while (*line != '\0' && *line != ' ' &&
+               *line != '\t' && *line != '\n')
+
+            line++;
     }
-    if(line[strlen(line - 1)] == '\n')
-        line[strlen(line - 1)] = '\0';
 
-    *argc = i;
-
+    *argv = '\0';
+    *argc = i--;
+    argv = argvTemp;
 }

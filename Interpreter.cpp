@@ -19,6 +19,7 @@ void interpreter::execCommand()
 {
     if(strcmp(m_args->argv[0], "new") == 0)
     {
+
         Icommand* newC = new New();
         newC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }

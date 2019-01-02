@@ -5,6 +5,8 @@
 #include <map>
 #include "Idna.h"
 #include "sharedPtr.h"
+#include <stdio.h>
+#include <string.h>
 
 
 
@@ -17,22 +19,24 @@ public:
 //    activeDna(){};
 //    ~activeDna();
 
-    void addDnaSeq(int idIdentfier, char * nameIdentfier, IDNAp seq);
+    void addDnaSeq(int idIdentfier, std::string nameIdentfier, IDNAp seq);
 
     inline void addDnaSeqById(int identfier, IDNAp seq);
-    inline void addDnaSeqByName(char * nameIdentfier, IDNAp seq);
+    inline void addDnaSeqByName(std::string nameIdentfier, IDNAp seq);
 
     inline IDNAp getDnaSeqById(int identfier);
-    inline IDNAp getDnaSeqByName(char* identfier);
+    inline IDNAp getDnaSeqByName(std::string identfier);
 
-    inline bool deleteDnaSeq(char* identfier);
+    inline bool deleteDnaSeq(std::string identfier);
+
+    inline bool nameIsExist(char*);
 
 private:
 
     std::map<int, IDNAp> seqDnaById;
-    std::map<char *, IDNAp> seqDnaByName;
+    std::map<std::string, IDNAp> seqDnaByName;
 
-    std::map<char *, IDNAp>::iterator seqByName;
+    std::map<std::string, IDNAp>::iterator seqByName;
     std::map<int, IDNAp>::iterator seqById;
 };
 
@@ -41,9 +45,11 @@ void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)
     seqDnaById.insert( std::pair<int, IDNAp>(seq->getIdSeq(), seq) );
 }
 
-void activeDna::addDnaSeqByName(char * nameIdentfier, IDNAp seq)
+void activeDna::addDnaSeqByName(std::string nameIdentfier, IDNAp seq)
 {
-    seqDnaByName.insert( std::pair<char *, IDNAp>(nameIdentfier, seq) );
+
+    std::cout << "activeDna::addDnaSeqByName ---- nameIdentfier = " << nameIdentfier << std::endl;
+    seqDnaByName.insert( std::pair<std::string, IDNAp>(nameIdentfier, seq) );
 }
 
 
@@ -59,14 +65,18 @@ IDNAp activeDna::getDnaSeqById(int identfier)
     return tmp;
 }
 
-IDNAp activeDna::getDnaSeqByName(char* identfier)
+IDNAp activeDna::getDnaSeqByName(std::string identfier)
 {
-    std::cout <<  "activeDna ------ identfier: " << identfier << std::endl;
     IDNAp tmp = seqDnaByName.find(identfier)->second;
 
     std::cout <<  "activeDna ------ tmp: " << tmp->getLength() << std::endl;
 
     return tmp;
+}
+
+bool activeDna::nameIsExist(char* key)
+{
+    return seqDnaByName.find(key) == seqDnaByName.end();
 }
 
 

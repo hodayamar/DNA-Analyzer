@@ -10,7 +10,7 @@ class DnaSequence : public Idna
 
 public:
 
-    explicit DnaSequence(const char* const char_sequence, char *);
+    explicit DnaSequence(const char* const char_sequence, std::string);
     ~DnaSequence();
 
     int getLength()const;

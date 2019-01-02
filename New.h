@@ -10,6 +10,11 @@ public:
    ~New();
     void run(int argc, char ** argv, memoryCtrl &);
 
+private:
+
+    void createSeqWithDefName(char*, memoryCtrl & );
+    void createSeq(char*, char*, memoryCtrl &);
+
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_NEW_H
