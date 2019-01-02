@@ -60,17 +60,13 @@ IDNAp activeDna::getDnaSeqById(int identfier)
     std::cout <<  "activeDna ------ identfier: " << identfier << std::endl;
     IDNAp tmp = seqDnaById.find(identfier)->second;
 
-    std::cout <<  "activeDna ------ tmp: " << tmp->getLength() << std::endl;
-
     return tmp;
 }
 
 IDNAp activeDna::getDnaSeqByName(std::string identfier)
 {
+    std::cout <<  "activeDna ------ name -- identfier: " << identfier << std::endl;
     IDNAp tmp = seqDnaByName.find(identfier)->second;
-
-    std::cout <<  "activeDna ------ tmp: " << tmp->getLength() << std::endl;
-
     return tmp;
 }
 

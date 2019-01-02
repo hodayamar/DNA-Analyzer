@@ -9,7 +9,7 @@ void memoryCtrl::addDnaSeq(int idIdentfier, std::string nameIdentfier, IDNAp seq
     m_activeDna.addDnaSeq(idIdentfier, nameIdentfier, seq);
 }
 
-IDNAp memoryCtrl::getDnaSeq(int idIdentfier, std::string nameIdentfier = "")
+IDNAp memoryCtrl::getDnaSeq(int idIdentfier, std::string nameIdentfier)
 {
     IDNAp temp;
     if(idIdentfier != -1)
