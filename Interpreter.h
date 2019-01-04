@@ -8,6 +8,7 @@
 #include "New.h"
 #include "Print.h"
 #include "showList.h"
+#include "Load.h"
 
 typedef void (*exec)(int argc, char ** argv);
 

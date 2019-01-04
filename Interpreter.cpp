@@ -30,6 +30,12 @@ void interpreter::execCommand()
         printC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
 
+    else if(strcmp(m_args->argv[0], "load") == 0)
+    {
+        Icommand* loadC = new load();
+        loadC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
+
     else if(strcmp(m_args->argv[0], "showList") == 0)
     {
         Icommand* showListC = new showList();

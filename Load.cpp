@@ -1,26 +1,10 @@
 #include "Load.h"
 
-DNAReader::~DNAReader()
+load::~load()
 {
-
-
+    std::cout << "im in load dtor" << std::endl;
 }
 
-std::string readSeqFromFile(std::string fileName)
-{
-    std::filebuf fb;
-
-    fb.open(fileName.c_str(), std::ios::in);
-
-    std::istream is(&fb);
-
-    std::string seq((std::istreambuf_iterator<char>(is)),
-                    std::istreambuf_iterator<char>());
-    fb.close();
-
-    return  seq;
-
-}
 
 bool NameIsExist(char * key, memoryCtrl & memctrl)
 {
@@ -44,9 +28,9 @@ void createSeq(char* seq, char* keyName, memoryCtrl & memctrl)
 
 }
 
-void DNAReader::run(int argc, char ** argv, memoryCtrl & memctrl)
+void load::run(int argc, char ** argv, memoryCtrl & memctrl)
 {
-    std::string seqFromFile = readSeqFromFile(argv[1]);
+    std::string seqFromFile = m_dnaReader.readSeqFromFile(argv[1]);
     char * seqName = argv[2];
     if (argc == 2)
         if ( NameIsExist( seqName, memctrl ) )
