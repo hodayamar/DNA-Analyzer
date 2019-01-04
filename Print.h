@@ -9,8 +9,6 @@ class Print : public Icommand
 public:
 
     ~Print();
-
-
     void run(int, char **, memoryCtrl & );
 
 
