@@ -32,7 +32,6 @@ void interpreter::execCommand()
 
     else if(strcmp(m_args->argv[0], "showList") == 0)
     {
-        std::cout << "in showList function" << std::endl;
         Icommand* showListC = new showList();
         showListC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }

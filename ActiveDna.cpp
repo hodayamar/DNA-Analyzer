@@ -24,6 +24,11 @@ void printOneSeq(IDNAp printedDna)
 
 void activeDna::showlist()
 {
-    for (seqByName = seqDnaByName.begin(); seqByName != seqDnaByName.end(); ++seqByName)
+    seqByName = seqDnaByName.begin();
+    if(seqByName == seqDnaByName.end())
+    {
+        std::cout << "The list is empty" << std::endl;
+    }
+    for ( ; seqByName != seqDnaByName.end(); ++seqByName)
         printOneSeq(seqByName->second);
 }
