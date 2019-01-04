@@ -7,6 +7,7 @@
 #include "Idna.h"
 #include "New.h"
 #include "Print.h"
+#include "showList.h"
 
 typedef void (*exec)(int argc, char ** argv);
 

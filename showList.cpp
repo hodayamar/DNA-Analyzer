@@ -1,5 +1,11 @@
-//
-// Created by hodaya on 1/4/19.
-//
-
 #include "showList.h"
+
+showList::~showList()
+{
+    std::cout << "im in showList dtor" << std::endl;
+}
+
+void showList::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
+{
+    m_memoryCtrl.showlist();
+}

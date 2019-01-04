@@ -30,6 +30,7 @@ public:
     inline bool deleteDnaSeq(std::string identfier);
 
     inline bool nameIsExist(char*);
+    void showlist();
 
 private:
 
@@ -74,6 +75,7 @@ bool activeDna::nameIsExist(char* key)
 {
     return seqDnaByName.find(key) == seqDnaByName.end();
 }
+
 
 
 

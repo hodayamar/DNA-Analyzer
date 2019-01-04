@@ -14,6 +14,7 @@ public:
     IDNAp getDnaSeq(int idIdentfier, std::string nameIdentfier);
     bool deleteDnaSeq(char * idIdentfier, std::string nameIdentfier);
     inline bool nameIsExist(char*);
+    inline void showlist();
 
 private:
 
@@ -23,6 +24,10 @@ private:
 bool memoryCtrl::nameIsExist(char* key)
 {
     return m_activeDna.nameIsExist(key);
+}
+void memoryCtrl::showlist()
+{
+    m_activeDna.showlist();
 }
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_MEMORYCTRL_H
