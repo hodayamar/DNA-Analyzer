@@ -32,6 +32,8 @@ void interpreter::execCommand()
 
     else if(strcmp(m_args->argv[0], "load") == 0)
     {
+        std::cout << "im in load" << std::endl;
+
         Icommand* loadC = new load();
         loadC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
@@ -40,6 +42,12 @@ void interpreter::execCommand()
     {
         Icommand* showListC = new showList();
         showListC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
+
+    else if(strcmp(m_args->argv[0], "save") == 0)
+    {
+        Icommand* saveC = new save();
+        saveC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
 }
 

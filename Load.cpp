@@ -5,21 +5,14 @@ load::~load()
     std::cout << "im in load dtor" << std::endl;
 }
 
-
-bool NameIsExist(char * key, memoryCtrl & memctrl)
-{
-    return memctrl.nameIsExist(key);
-}
-
-
-void createSeqWithDefName(const char* seq, memoryCtrl & memctrl)
+void createSeqWithDefName( const char* seq, memoryCtrl & memctrl)
 {
     IDNAp newDna(new DnaSequence (seq, ""));
     memctrl.addDnaSeq(newDna->getIdSeq(), newDna->getNameSeq(), newDna );
     std::cout << "def name" << std::endl;
 }
 
-void createSeq(char* seq, char* keyName, memoryCtrl & memctrl)
+void createSeq( const char* seq, char* keyName, memoryCtrl & memctrl)
 {
 
     IDNAp newDna(new DnaSequence (seq, keyName));
@@ -30,11 +23,35 @@ void createSeq(char* seq, char* keyName, memoryCtrl & memctrl)
 
 void load::run(int argc, char ** argv, memoryCtrl & memctrl)
 {
-    std::string seqFromFile = m_dnaReader.readSeqFromFile(argv[1]);
-    char * seqName = argv[2];
-    if (argc == 2)
-        if ( NameIsExist( seqName, memctrl ) )
+    if (m_dnaReader.fileIsExist(argv[1]))
+    {
+        std::string seqFromFile = m_dnaReader.readSeqFromFile(argv[1]);
+
+        if ( argc == 2 )
+        {
+            char * keyName = argv[2];
+
+            if ( memctrl.nameIsExist( keyName ) )
+            {
+
+                createSeq(seqFromFile.c_str(), keyName, memctrl);
+            }
+
+            else
+                createSeqWithDefName( seqFromFile.c_str(), memctrl );
+        }
+
+        else if ( argc == 1 )
 
             createSeqWithDefName( seqFromFile.c_str(), memctrl );
+
+        else
+
+            std::cout << "Wrong number of argument" << std::endl;
+    }
+
+    else
+
+        std::cout << "The file does not exist" << std::endl;
 }
 

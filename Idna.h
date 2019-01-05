@@ -14,9 +14,6 @@ public:
     virtual int getIdSeq()const = 0;
     virtual std::string getNameSeq()const = 0;
 
-
-
-
 protected:
 
     std::string nameSeq;
