@@ -49,6 +49,11 @@ void interpreter::execCommand()
         Icommand* saveC = new save();
         saveC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+    else if(strcmp(m_args->argv[0], "delete") == 0)
+    {
+        Icommand* deleteC = new deleteSeq();
+        deleteC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

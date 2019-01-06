@@ -18,6 +18,12 @@ void printSeq(IDNAp printedDna)
 
 void Print::run(int argc, char **argv, memoryCtrl & memctrl) {
 
+    if (argc != 1)
+    {
+        std::cout << "no match number of arguments" << std::endl;
+        return;
+    }
+
     char * tmp = argv[1];
 
     if (tmp[0] == '#')

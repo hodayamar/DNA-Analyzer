@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <map>
-#include "Idna.h"
-#include "sharedPtr.h"
 #include <stdio.h>
 #include <string.h>
+#include "Idna.h"
+#include "sharedPtr.h"
 
 
 
@@ -16,9 +16,6 @@ class activeDna
 {
 public:
 
-//    activeDna(){};
-//    ~activeDna();
-
     void addDnaSeq(int idIdentfier, std::string nameIdentfier, IDNAp seq);
 
     inline void addDnaSeqById(int identfier, IDNAp seq);
@@ -27,7 +24,7 @@ public:
     inline IDNAp getDnaSeqById(int identfier);
     inline IDNAp getDnaSeqByName(std::string identfier);
 
-    inline bool deleteDnaSeq(std::string identfier);
+    void delDnaSeq(int idIdentfier, std::string nameIdentfier);
 
     inline bool nameIsExist(char*);
     void showlist();
@@ -39,6 +36,11 @@ private:
 
     std::map<std::string, IDNAp>::iterator seqByName;
     std::map<int, IDNAp>::iterator seqById;
+
+    void removeSeqByIdFromDB(int identifier);
+    void removeSeqByNameFromDB(std::string identifier);
+
+
 };
 
 void activeDna::addDnaSeqById(int idIdentfier, IDNAp seq)

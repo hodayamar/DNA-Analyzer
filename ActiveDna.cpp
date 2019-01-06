@@ -21,6 +21,20 @@ void printOneSeq(IDNAp printedDna)
     std::cout << std::endl;
 }
 
+void activeDna::removeSeqByIdFromDB(int identifier)
+{
+    std::string keyName = seqById->second->getNameSeq();
+    seqDnaByName.erase( keyName );
+    seqDnaById.erase( seqById );
+}
+
+void activeDna::removeSeqByNameFromDB(std::string identifier)
+{
+    int keyId = seqByName->second->getIdSeq();
+    seqDnaById.erase( keyId );
+    seqDnaByName.erase( seqByName );
+}
+
 
 void activeDna::showlist()
 {
@@ -31,4 +45,31 @@ void activeDna::showlist()
     }
     for ( ; seqByName != seqDnaByName.end(); ++seqByName)
         printOneSeq(seqByName->second);
+}
+
+void activeDna::delDnaSeq(int idIdentfier, std::string nameIdentfier)
+{
+    if (idIdentfier != -1)
+    {
+
+        seqById = seqDnaById.find(idIdentfier);
+
+        if( seqById != seqDnaById.end() )
+        {
+            removeSeqByIdFromDB( seqById->second->getIdSeq() );
+        }
+
+        else puts( "not found" ) ;
+    }
+    else
+    {
+        seqByName = seqDnaByName.find(nameIdentfier);
+
+        if( seqByName != seqDnaByName.end() )
+        {
+            removeSeqByNameFromDB( seqByName->second->getNameSeq() );
+        }
+
+        else puts( "not found" ) ;
+    }
 }

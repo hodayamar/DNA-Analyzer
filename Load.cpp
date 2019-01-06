@@ -23,35 +23,37 @@ void createSeq( const char* seq, char* keyName, memoryCtrl & memctrl)
 
 void load::run(int argc, char ** argv, memoryCtrl & memctrl)
 {
-    if (m_dnaReader.fileIsExist(argv[1]))
+    if (! m_dnaReader.fileIsExist(argv[1]))
     {
-        std::string seqFromFile = m_dnaReader.readSeqFromFile(argv[1]);
+        std::cout << "The file does not exist" << std::endl;
+        return;
+    }
 
-        if ( argc == 2 )
+    std::string seqFromFile = m_dnaReader.readSeqFromFile(argv[1]);
+
+    if ( argc == 2 )
+    {
+        char * keyName = argv[2];
+
+        if ( memctrl.nameIsExist( keyName ) )
         {
-            char * keyName = argv[2];
 
-            if ( memctrl.nameIsExist( keyName ) )
-            {
-
-                createSeq(seqFromFile.c_str(), keyName, memctrl);
-            }
-
-            else
-                createSeqWithDefName( seqFromFile.c_str(), memctrl );
+            createSeq(seqFromFile.c_str(), keyName, memctrl);
         }
 
-        else if ( argc == 1 )
-
-            createSeqWithDefName( seqFromFile.c_str(), memctrl );
-
         else
-
-            std::cout << "Wrong number of argument" << std::endl;
+            createSeqWithDefName( seqFromFile.c_str(), memctrl );
     }
+
+    else if ( argc == 1 )
+
+        createSeqWithDefName( seqFromFile.c_str(), memctrl );
 
     else
 
-        std::cout << "The file does not exist" << std::endl;
+        std::cout << "Wrong number of argument" << std::endl;
+
+
+
 }
 

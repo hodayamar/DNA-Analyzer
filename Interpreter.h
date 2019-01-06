@@ -10,6 +10,7 @@
 #include "showList.h"
 #include "Load.h"
 #include "Save.h"
+#include "delete.h"
 
 typedef void (*exec)(int argc, char ** argv);
 
