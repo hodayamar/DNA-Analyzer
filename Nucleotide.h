@@ -17,11 +17,12 @@ public:
     {
         return c_sequence;
     };
+    char flip();
 
 private:
     void check_if_valid(char c_to_check);
     char c_sequence;
-    char flip();
+
 
 };
 

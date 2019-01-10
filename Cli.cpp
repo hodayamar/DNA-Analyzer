@@ -1,8 +1,6 @@
 #include "Cli.h"
 #include <iostream>
 
-
-
 void cli::run(args * m_args)
 {
     std::cout << ">>>";

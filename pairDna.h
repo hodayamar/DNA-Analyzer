@@ -3,23 +3,25 @@
 
 #include "Idna.h"
 
+typedef sharedPtr<Idna> IDNAp;
+
 class pairDna : public Idna
 {
 public:
 
-    pairDna(sharedPtr <idna>);//FIXME
-    ~pairDna();
+    pairDna(IDNAp, std::string);
+    ~pairDna(){};
 
-    int getLength()const;
+    unsigned long getLength()const;
     Nucleotide operator[](int)const;
+
     int getIdSeq()const;
     std::string getNameSeq()const;
 
-
 private:
 
-    Nucleotide* sequence;
-    unsigned long len;
+    IDNAp m_dna;
+
     void setToDefualtName();
 };
 

@@ -1,5 +1,4 @@
 #include "Dna.h"
-#include <sstream>
 
 int DnaSequence::Idna::autoInc = 0;
 
@@ -69,13 +68,10 @@ void DnaSequence::init_sequence(const char* const char_sequence)
     }
 }
 
-int DnaSequence::getLength()const
+unsigned long DnaSequence::getLength()const
 {
     return len;
 }
-
-
-//Nucleotide operator[](int)const;
 
 Nucleotide DnaSequence::operator[](int index)const
 {

@@ -3,7 +3,6 @@
 
 #include <cstring>
 #include "Idna.h"
-#define defName "seq"
 
 class DnaSequence : public Idna
 {
@@ -13,7 +12,7 @@ public:
     DnaSequence(const char* const char_sequence, std::string);
     ~DnaSequence();
 
-    int getLength()const;
+    unsigned long getLength()const;
     Nucleotide operator[](int)const;
     int getIdSeq()const;
     std::string getNameSeq()const;

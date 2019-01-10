@@ -1,7 +1,7 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_ICOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_ICOMMAND_H
 
-#include <cstdlib> //the standard C library header
+#include <cstdlib>
 #include <string>
 #include "sharedPtr.h"
 #include "MemoryCtrl.h"

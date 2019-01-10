@@ -8,8 +8,6 @@
 #include "Idna.h"
 #include "sharedPtr.h"
 
-
-
 typedef sharedPtr<Idna> IDNAp;
 
 class activeDna

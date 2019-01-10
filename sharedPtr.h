@@ -11,7 +11,6 @@ class sharedPtr
 public:
 
     explicit sharedPtr(T* ptr = NULL);
-    sharedPtr(){};
     ~sharedPtr();
 
     sharedPtr(const sharedPtr &);

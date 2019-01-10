@@ -11,6 +11,7 @@
 #include "Load.h"
 #include "Save.h"
 #include "delete.h"
+#include "pair.h"
 
 typedef void (*exec)(int argc, char ** argv);
 
