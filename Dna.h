@@ -26,10 +26,6 @@ private:
 //    DnaSequence(const DnaSequence&, int, int);
     void init_sequence(const char* const);
     void setToDefualtName();
-
-
-
-
 };
 
 

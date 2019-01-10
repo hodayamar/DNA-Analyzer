@@ -4,6 +4,7 @@
 //check if there is no match seq on map.
 //adding exception - if file does not exist.
 //make printOneSeq func available for all classes
+//send all outputs to cli.
 
 int main()
 {

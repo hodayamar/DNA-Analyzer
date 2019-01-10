@@ -11,6 +11,7 @@ class sharedPtr
 public:
 
     explicit sharedPtr(T* ptr = NULL);
+    sharedPtr(){};
     ~sharedPtr();
 
     sharedPtr(const sharedPtr &);
@@ -53,7 +54,7 @@ sharedPtr<T>::sharedPtr(T* ptr)try
 catch(std::bad_alloc& e)
 {
     delete ptr;
-    throw; // throw the same exception that we get.
+    throw;
 }
 
 
@@ -90,7 +91,6 @@ sharedPtr<T>::sharedPtr(const sharedPtr& ptr)
         :refCount(ptr.refCount),
          m_ptr(ptr.m_ptr)
 {
-//    std::cout << "template<typename T>cpytor" << std::endl;
 
     if(isvalid())
         (*refCount)++;
@@ -102,12 +102,9 @@ sharedPtr<T>::sharedPtr(const sharedPtr<U>& ptr)
         :refCount(ptr.refCount),
          m_ptr(ptr.m_ptr)
 {
-//    std::cout << "template<typename U>cpytor" << std::endl;
     if(isvalid())
         (*refCount)++;
 }
-
-
 
 template<typename T>
 void sharedPtr<T>::swap(sharedPtr& other)
@@ -119,7 +116,7 @@ void sharedPtr<T>::swap(sharedPtr& other)
 template<typename T>
 sharedPtr<T>& sharedPtr<T>::operator=(const sharedPtr& ptr)
 {
-    //for ctor
+
     sharedPtr<T> temp(ptr);
     swap(temp);
     return *this;
