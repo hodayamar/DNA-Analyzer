@@ -34,7 +34,7 @@ unsigned long duplicatedDna::getLength()const
     return m_dna->getLength();
 }
 
-Nucleotide duplicatedDna::operator[](int index)const
+Nucleotide duplicatedDna::operator[](size_t index)const
 {
     return m_dna-> operator[](index);
 }

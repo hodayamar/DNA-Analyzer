@@ -15,7 +15,7 @@ public:
     virtual ~Idna(){};
 
     virtual unsigned long getLength() const = 0;
-    virtual Nucleotide operator[](int) const = 0;
+    virtual Nucleotide operator[](size_t) const = 0;
 
     virtual int getIdSeq() const = 0;
     virtual std::string getNameSeq() const = 0;

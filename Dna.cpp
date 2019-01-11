@@ -73,7 +73,7 @@ unsigned long DnaSequence::getLength()const
     return len;
 }
 
-Nucleotide DnaSequence::operator[](int index)const
+Nucleotide DnaSequence::operator[]( size_t index )const
 {
     return sequence[index];
 }

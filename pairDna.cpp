@@ -34,7 +34,7 @@ unsigned long pairDna::getLength()const
     return m_dna->getLength();
 }
 
-Nucleotide pairDna::operator[](int index)const
+Nucleotide pairDna::operator[](size_t index)const
 {
     return m_dna-> operator[](index).flip();
 }

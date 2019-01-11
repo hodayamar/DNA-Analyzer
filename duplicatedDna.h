@@ -14,7 +14,7 @@ public:
     ~duplicatedDna(){};
 
     unsigned long getLength()const;
-    Nucleotide operator[](int)const;
+    Nucleotide operator[](size_t)const;
 
     int getIdSeq()const;
     std::string getNameSeq()const;
