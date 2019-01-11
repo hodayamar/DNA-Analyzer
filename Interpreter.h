@@ -12,6 +12,7 @@
 #include "Save.h"
 #include "delete.h"
 #include "pair.h"
+#include "duplicate.h"
 
 typedef void (*exec)(int argc, char ** argv);
 

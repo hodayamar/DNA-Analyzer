@@ -61,7 +61,7 @@ void pair::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
 
     if ( WrongIdentifier ( identifier ) )
         return;;
-        
+
     dna = getSeq(identifier, m_memoryCtrl);
 
     switch (argc)

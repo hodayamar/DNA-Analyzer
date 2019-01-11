@@ -58,11 +58,14 @@ void interpreter::execCommand()
 
     else if(strcmp(m_args->argv[0], "pair") == 0)
     {
-
-        //TODO - CHECK THIS FUNCTION
-
         Icommand* pairC = new pair();
         pairC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
+
+    else if(strcmp(m_args->argv[0], "dup") == 0)
+    {
+        Icommand* dupC = new duplicate();
+        dupC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
 }
 
