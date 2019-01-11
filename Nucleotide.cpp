@@ -2,14 +2,13 @@
 
 void Nucleotide::check_if_valid(char c_to_check)
 {
-    c_to_check = toupper(c_to_check);
     if (c_to_check != 'A' && c_to_check != 'G' && c_to_check != 'T' && c_to_check != 'C')
         throw std::invalid_argument("received invalid value");
 }
 
 Nucleotide::Nucleotide(char nuc)
 {
-
+    nuc = toupper(nuc);
     try{
         check_if_valid(nuc);
         c_sequence = nuc;
@@ -44,6 +43,7 @@ char Nucleotide::flip()
         switch (c_sequence) {
             case 'A':
                 return 'T';
+
             case 'C':
                 return 'G';
             case 'G':

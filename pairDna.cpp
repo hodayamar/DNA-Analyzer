@@ -13,16 +13,16 @@ void pairDna::setToDefualtName()
 
 pairDna::pairDna(IDNAp pair, std::string name)
 {
+
     m_dna = pair;
 
     idSeq = autoInc++;
-
-    std::cout << "idSeq: " << idSeq << std::endl;
 
     if(name.compare(""))
     {
         nameSeq = name;
     }
+
     else
     {
         setToDefualtName();

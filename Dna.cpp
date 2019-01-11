@@ -75,7 +75,6 @@ unsigned long DnaSequence::getLength()const
 
 Nucleotide DnaSequence::operator[](int index)const
 {
-
     return sequence[index];
 }
 

@@ -7,20 +7,20 @@ pair::~pair()
 
 IDNAp getSeq(char * args, memoryCtrl & m_memoryCtrl)
 {
-    IDNAp idna;
+    IDNAp dna;
 
     if(args[0] == '@')
 
-        idna = m_memoryCtrl.getDnaSeq(-1, ++args);
+        dna = m_memoryCtrl.getDnaSeq(-1, ++args);
 
     else
     {
         int dnaId;
         dnaId = (atoi(++args));
-        idna = m_memoryCtrl.getDnaSeq(dnaId, "");
+        dna = m_memoryCtrl.getDnaSeq(dnaId, "");
     }
 
-    return idna;
+    return dna;
 }
 
 
@@ -28,17 +28,12 @@ void pair::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
 {
 
 
-    //get dna by id or by name -- v
+    IDNAp dna;
+    dna = getSeq(argv[1], m_memoryCtrl);
 
-    IDNAp idna;
-    idna = getSeq(argv[1], m_memoryCtrl);
+    //TODO - if def name is needed. -- need to be done!
+    IDNAp pairSeq(new pairDna (dna, ""));
 
-    //create dna pair
-
-    //craete name - if def name is needed. -- need to be done!
-    IDNAp pairSeq(new pairDna (idna, ""));
-
-    //add dna pair to the map
     m_memoryCtrl.addDnaSeq(pairSeq->getIdSeq(), pairSeq->getNameSeq(), pairSeq );
 
 }

@@ -36,9 +36,10 @@ void New::run(int argc, char ** argv, memoryCtrl & memctrl)
             createSeqWithDefName(argv[1], memctrl);
 
     }
-    else
+    else if (argc == 1)
         createSeqWithDefName(argv[1], memctrl);
 
-    std::cout << "im in new cmd" << std::endl;
+    else
+        std::cout << "Wrong number of parameters" << std::endl;
 
 }
