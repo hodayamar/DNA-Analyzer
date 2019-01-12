@@ -2,11 +2,9 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_DUPLICATEDDNA_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_DUPLICATEDDNA_H
 
-#include "Idna.h"
+#include "dnaHelper.h"
 
-typedef sharedPtr<Idna> IDNAp;
-
-class duplicatedDna : public Idna
+class duplicatedDna : public dnaHelper
 {
 public:
 
@@ -16,8 +14,6 @@ public:
     unsigned long getLength()const;
     Nucleotide operator[](size_t)const;
 
-    int getIdSeq()const;
-    std::string getNameSeq()const;
 
 private:
 

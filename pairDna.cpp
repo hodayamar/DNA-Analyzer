@@ -39,15 +39,6 @@ Nucleotide pairDna::operator[](size_t index)const
     return m_dna-> operator[](index).flip();
 }
 
-int pairDna::getIdSeq()const
-{
-    return idSeq;
-}
-
-std::string pairDna::getNameSeq()const
-{
-    return nameSeq;
-}
 
 
 

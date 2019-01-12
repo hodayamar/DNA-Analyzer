@@ -1,11 +1,9 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PAIRDNA_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PAIRDNA_H
 
-#include "Idna.h"
+#include "dnaHelper.h"
 
-typedef sharedPtr<Idna> IDNAp;
-
-class pairDna : public Idna
+class pairDna : public dnaHelper
 {
 public:
 
@@ -15,8 +13,6 @@ public:
     unsigned long getLength()const;
     Nucleotide operator[](size_t)const;
 
-    int getIdSeq()const;
-    std::string getNameSeq()const;
 
 private:
 

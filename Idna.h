@@ -3,9 +3,7 @@
 
 #include <sstream>
 #include "Nucleotide.h"
-#include "sharedPtr.h"
 
-#define defName "seq"
 
 
 class  Idna
@@ -24,6 +22,7 @@ protected:
 
     std::string nameSeq;
     int idSeq;
+    unsigned long len;
     static int autoInc;
 
 };

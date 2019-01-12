@@ -2,11 +2,10 @@
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_CONCATEDDNA_H
 
 #include <cstring>
-#include "Idna.h"
+#include "dnaHelper.h"
 
-typedef sharedPtr<Idna> IDNAp;
 
-class concatedDna : public Idna
+class concatedDna : public dnaHelper
 {
 
 public:
@@ -16,8 +15,7 @@ public:
 
     unsigned long getLength()const;
     Nucleotide operator[](size_t)const;
-    int getIdSeq()const;
-    std::string getNameSeq()const;
+
 
 
 private:

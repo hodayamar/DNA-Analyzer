@@ -83,12 +83,12 @@ DnaSequence::~DnaSequence()
     delete[] sequence;
 }
 
-int DnaSequence::getIdSeq()const
-{
-    return idSeq;
-}
-std::string DnaSequence::getNameSeq()const
-{
-    return nameSeq;
-}
+    int DnaSequence::getIdSeq()const
+    {
+        return idSeq;
+    }
+    std::string DnaSequence::getNameSeq()const
+    {
+        return nameSeq;
+    }
 

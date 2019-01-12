@@ -44,12 +44,3 @@ Nucleotide concatedDna::operator[](size_t index)const
         return m_secondDna-> operator[](index - firstLen);
 }
 
-int concatedDna::getIdSeq()const
-{
-    return idSeq;
-}
-
-std::string concatedDna::getNameSeq()const
-{
-    return nameSeq;
-}

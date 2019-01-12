@@ -39,16 +39,5 @@ Nucleotide duplicatedDna::operator[](size_t index)const
     return m_dna-> operator[](index);
 }
 
-int duplicatedDna::getIdSeq()const
-{
-    return idSeq;
-}
-
-std::string duplicatedDna::getNameSeq()const
-{
-    return nameSeq;
-}
-
-
 
 

@@ -2,9 +2,9 @@
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_DNA_H
 
 #include <cstring>
-#include "Idna.h"
+#include "dnaHelper.h"
 
-class DnaSequence : public Idna
+class DnaSequence : public dnaHelper
 {
 
 public:
@@ -21,8 +21,7 @@ public:
 private:
 
     Nucleotide* sequence;
-    unsigned long len;
-//    DnaSequence(const DnaSequence&, int, int);
+
     void init_sequence(const char* const);
     void setToDefualtName();
 };
