@@ -1,7 +1,7 @@
 #include "commandHelper.h"
 
 
-bool commandHelper::numOfElements(int argc, int minNumOfElements, int maxNumOfElements)
+bool commandHelper::wrongNumOfElements(int argc, int minNumOfElements, int maxNumOfElements)const
 {
     if(argc < minNumOfElements || argc > maxNumOfElements)
     {
@@ -13,7 +13,7 @@ bool commandHelper::numOfElements(int argc, int minNumOfElements, int maxNumOfEl
 }
 
 
-bool commandHelper::wrongIdentifier(char * identifier)
+bool commandHelper::wrongIdentifier(char * identifier)const
 {
     if ( (identifier[0] != '@') & (identifier[0] != '#') )
     {
@@ -24,7 +24,7 @@ bool commandHelper::wrongIdentifier(char * identifier)
     return false;
 }
 
-IDNAp commandHelper::getSeq(char * args, memoryCtrl & m_memoryCtrl)
+IDNAp commandHelper::getSeq(char * args, memoryCtrl & m_memoryCtrl)const
 {
     IDNAp dna;
 

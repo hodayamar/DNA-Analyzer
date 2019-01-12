@@ -1,69 +1,38 @@
 #include "pair.h"
 
+
+pair::pair ()
+{
+    minNumOfElements = 1;
+    maxNumOfElements = 2;
+}
+
 pair::~pair()
 {
     std::cout << "im in pair dtor" << std::endl;
 }
 
-bool WrongNumOfElement(int argc)
+void pair::setIdentifier(char ** argv)
 {
-    if(argc < 1 || argc > 2)
-    {
-        std::cout << "Wrong number of argument" << std::endl;
-        return true;
-    }
-
-    return false;
-}
-
-bool WrongIdentifier(char * identifier)
-{
-    if ( (identifier[0] != '@') & (identifier[0] != '#') )
-    {
-        std::cout << "In order to find a seq identifier is needed" << std::endl;
-        return true;
-    }
-
-    return false;
-}
-
-
-
-IDNAp getSeq(char * args, memoryCtrl & m_memoryCtrl)
-{
-    IDNAp dna;
-
-    if(args[0] == '@')
-
-        dna = m_memoryCtrl.getDnaSeq(-1, ++args);
-
-    else
-    {
-        int dnaId;
-        dnaId = (atoi(++args));
-        dna = m_memoryCtrl.getDnaSeq(dnaId, "");
-    }
-
-    return dna;
+    identifier = argv[1];
 }
 
 
 void pair::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
 {
-    std::string name;
-    char * identifier;
-    IDNAp dna;
 
-    if( WrongNumOfElement ( argc ) )
+
+    if( wrongNumOfElements ( argc, minNumOfElements, maxNumOfElements ) )
         return;
 
-    identifier = argv[1];
+    setIdentifier( argv );
 
-    if ( WrongIdentifier ( identifier ) )
+    if ( wrongIdentifier ( identifier ) )
         return;;
 
     dna = getSeq(identifier, m_memoryCtrl);
 
+    //TODO - NEED TO MAKE A NICE FUNCTION FOR THIS CODE
     switch (argc)
     {
         case 1:

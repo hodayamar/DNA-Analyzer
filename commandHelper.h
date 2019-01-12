@@ -12,11 +12,17 @@ typedef sharedPtr<Idna> IDNAp;
 
 class commandHelper : public Icommand
 {
-public:
 
-    bool numOfElements( int, int, int );
-    bool wrongIdentifier( char * );
-    IDNAp getSeq( char *, memoryCtrl & );
+protected:
+
+    bool wrongNumOfElements( int, int, int )const ;
+    bool wrongIdentifier( char * )const;
+    IDNAp getSeq( char *, memoryCtrl & )const;
+    virtual void setIdentifier(char **){};
+
+    int minNumOfElements;
+    int maxNumOfElements;
+
 
 //    void printSeq()const;
 
