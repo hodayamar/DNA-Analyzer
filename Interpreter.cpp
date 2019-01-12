@@ -67,6 +67,12 @@ void interpreter::execCommand()
         Icommand* dupC = new duplicate();
         dupC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+
+    else if(strcmp(m_args->argv[0], "concat") == 0)
+    {
+        Icommand* concateC = new concate();
+        concateC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

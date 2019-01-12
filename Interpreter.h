@@ -13,6 +13,7 @@
 #include "delete.h"
 #include "pair.h"
 #include "duplicate.h"
+#include "concate.h"
 
 typedef void (*exec)(int argc, char ** argv);
 

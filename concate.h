@@ -2,7 +2,7 @@
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_CONCATE_H
 
 #include "Icommand.h"
-#include "duplicatedDna.h"
+#include "concatedDna.h"
 
 class concate : public Icommand
 {

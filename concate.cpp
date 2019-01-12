@@ -1,6 +1,5 @@
 #include "concate.h"
 
-
 concate::~concate()
 {
     std::cout << "im in pair dtor" << std::endl;
@@ -29,8 +28,7 @@ bool wrongIdentifier(char * identifier)
 }
 
 
-
-IDNAp getSeq(char * args, memoryCtrl & m_memoryCtrl)
+IDNAp con_getSeq(char * args, memoryCtrl & m_memoryCtrl)
 {
     IDNAp dna;
 
@@ -49,37 +47,38 @@ IDNAp getSeq(char * args, memoryCtrl & m_memoryCtrl)
 }
 
 
-void concate::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
-{
+void concate::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl) {
     std::string name;
-    char * identifier;
-    IDNAp dna;
+    char *firstIdentifier;
+    char *secondIdentifier;
+    IDNAp firstDna;
+    IDNAp secondDna;
 
-    if( WrongNumOfElement ( argc ) )
-        return;
+//    if (numOfElement(argc))
+//        return;
 
-    identifier = argv[1];
+    firstIdentifier = argv[1];
+    secondIdentifier = argv[2];
 
-    if ( WrongIdentifier ( identifier ) )
-        return;;
+//    if ( wrongIdentifier ( identifier ) )
+//        return;;
 
-    dna = getSeq(identifier, m_memoryCtrl);
+    firstDna = con_getSeq(firstIdentifier, m_memoryCtrl);
+    secondDna = con_getSeq(secondIdentifier, m_memoryCtrl);
 
-    switch (argc)
-    {
-        case 1:
-        {
+    switch (argc) {
+        case 1: {
 
             name = "";
             break;
         }
-        case 2:
-        {
-            name = argv[2];;
+        case 2: {
+            name = argv[2];
             break;
         }
     }
 
     //TODO - if def name is needed. -- need to be done!
-    IDNAp pairSeq(new pairDna (dna, name));
-    m_memoryCtrl.addDnaSeq(pairSeq->getIdSeq(), pairSeq->getNameSeq(), pairSeq );
+    IDNAp concatedSeq(new concatedDna(firstDna, secondDna, name));
+    m_memoryCtrl.addDnaSeq(concatedSeq->getIdSeq(), concatedSeq->getNameSeq(), concatedSeq);
+}
