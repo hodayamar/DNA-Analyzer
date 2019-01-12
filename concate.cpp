@@ -54,31 +54,33 @@ void concate::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl) {
     IDNAp firstDna;
     IDNAp secondDna;
 
-//    if (numOfElement(argc))
-//        return;
+    if (numOfElement(argc))
+        return;
 
     firstIdentifier = argv[1];
     secondIdentifier = argv[2];
 
-//    if ( wrongIdentifier ( identifier ) )
-//        return;;
+    if ( wrongIdentifier ( firstIdentifier ) | wrongIdentifier ( secondIdentifier ) )
+        return;;
 
     firstDna = con_getSeq(firstIdentifier, m_memoryCtrl);
     secondDna = con_getSeq(secondIdentifier, m_memoryCtrl);
 
     switch (argc) {
-        case 1: {
+
+        case 2:
+        {
 
             name = "";
             break;
         }
-        case 2: {
-            name = argv[2];
-            break;
+        case 3:
+        {
+            name = argv[3];
+                break;
         }
     }
-
     //TODO - if def name is needed. -- need to be done!
-    IDNAp concatedSeq(new concatedDna(firstDna, secondDna, name));
+    IDNAp concatedSeq(new concatedDna( firstDna, secondDna, name ) );
     m_memoryCtrl.addDnaSeq(concatedSeq->getIdSeq(), concatedSeq->getNameSeq(), concatedSeq);
 }
