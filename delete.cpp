@@ -1,36 +1,45 @@
 #include "delete.h"
 
+deleteSeq::deleteSeq()
+{
+   minNumOfElements = 1;
+   maxNumOfElements = 2;
+}
+
 deleteSeq::~deleteSeq()
 {
     std::cout<<"im in deleteSeq dtor\n";
 }
 
-void deleteSeq::run(int argc, char **argv, memoryCtrl & m_memoryCtrl)
+void deleteSeq::setIdentifier(char ** argv)
 {
-    std::cout<<"--- im in deleteSeq run ---- \n";
+    identifier = argv[1];
+}
 
-    if(argc < 1)
-        std::cout<<"In order to Save we need an identifier: Id/Name  \n";
+void deleteSeq::deleteSeqFromDB(memoryCtrl & m_memoryCtrl)
+{
+    if(identifier[0] == '@')
+        m_memoryCtrl.delDnaSeq(-1, ++identifier);
 
     else
     {
-        if((argv[1][0] != '@') && (argv[1][0] != '#'))
-            std::cout<<"Id must start with # , Name must start with @  \n";
-
-        else
-        {
-            char * tmp = argv[1];
-            std::string fileName;
-
-            if(argv[1][0] == '@')
-                m_memoryCtrl.delDnaSeq(-1, ++tmp);
-
-            else
-            {
-                int dnaId;
-                dnaId = (atoi(++tmp));
-                m_memoryCtrl.delDnaSeq(dnaId, "");
-            }
-        }
+        int dnaId;
+        dnaId = (atoi(++identifier));
+        m_memoryCtrl.delDnaSeq(dnaId, "");
     }
+}
+
+void deleteSeq::run(int argc, char **argv, memoryCtrl & m_memoryCtrl)
+{
+
+    if( wrongNumOfElements(argc, minNumOfElements, maxNumOfElements) )
+        return;
+
+    setIdentifier(argv);
+
+    if (wrongIdentifier( identifier ) )
+        return;
+
+    deleteSeqFromDB( m_memoryCtrl );
+
 }

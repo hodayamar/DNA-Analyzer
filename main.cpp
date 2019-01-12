@@ -7,6 +7,7 @@
 //send all outputs to cli.
 //FIXME - add checking for the pair sequence.
 //add explicit o nocleotides.
+//set autoInc to 0 if the list is empty .
 
 int main()
 {
