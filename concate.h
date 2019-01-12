@@ -10,7 +10,7 @@ public:
 
     concate ();
     ~concate ();
-    void run(int argc, char ** argv, memoryCtrl &);
+    void run( int argc, char ** argv, memoryCtrl & );
 
 private:
 
@@ -20,7 +20,9 @@ private:
     IDNAp firstDna;
     IDNAp secondDna;
 
-    void setIdentifier(char **);
+    void setIdentifier( char ** );
+    void setNameSeq( int, char ** );
+    void concatAndAddingSeqToDB( memoryCtrl & );
 
 };
 

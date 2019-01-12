@@ -19,6 +19,7 @@ protected:
     bool wrongIdentifier( char * )const;
     IDNAp getSeq( char *, memoryCtrl & )const;
     virtual void setIdentifier(char **){};
+    virtual void setNameSeq(int, char ** ) {};
 
     int minNumOfElements;
     int maxNumOfElements;

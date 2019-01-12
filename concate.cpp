@@ -17,25 +17,10 @@ void concate::setIdentifier(char ** argv)
     secondIdentifier = argv[2];
 }
 
-
-void concate::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl) {
-
-
-
-    if (wrongNumOfElements(argc, minNumOfElements, maxNumOfElements))
-        return;
-
-    setIdentifier(argv);
-
-    if ( wrongIdentifier ( firstIdentifier ) | wrongIdentifier ( secondIdentifier ) )
-        return;;
-
-    firstDna = getSeq(firstIdentifier, m_memoryCtrl);
-    secondDna = getSeq(secondIdentifier, m_memoryCtrl);
-
-    //TODO - NEED TO MAKE A NICE FUNCTION FOR THIS CODE
-    switch (argc) {
-
+void concate::setNameSeq( int argc, char ** argv )
+{
+    switch (argc)
+    {
         case 2:
         {
 
@@ -45,11 +30,36 @@ void concate::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl) {
         case 3:
         {
             name = argv[3];
-                break;
+            break;
         }
     }
+}
+
+void concate::concatAndAddingSeqToDB(memoryCtrl & m_memoryCtrl)
+{
+    firstDna = getSeq(firstIdentifier, m_memoryCtrl);
+    secondDna = getSeq(secondIdentifier, m_memoryCtrl);
 
     //TODO - if def name is needed. -- need to be done!
     IDNAp concatedSeq(new concatedDna( firstDna, secondDna, name ) );
     m_memoryCtrl.addDnaSeq(concatedSeq->getIdSeq(), concatedSeq->getNameSeq(), concatedSeq);
+}
+
+
+
+void concate::run( int argc, char ** argv, memoryCtrl & m_memoryCtrl ) {
+
+
+
+    if ( wrongNumOfElements( argc, minNumOfElements, maxNumOfElements ) )
+        return;
+
+    setIdentifier( argv );
+
+    if ( wrongIdentifier ( firstIdentifier ) | wrongIdentifier ( secondIdentifier ) )
+        return;
+
+    setNameSeq( argc, argv );
+
+    concatAndAddingSeqToDB( m_memoryCtrl );
 }
