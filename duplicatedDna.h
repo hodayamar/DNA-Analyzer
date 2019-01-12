@@ -19,7 +19,6 @@ private:
 
     IDNAp m_dna;
 
-    void setToDefualtName();
 };
 
 

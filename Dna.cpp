@@ -2,17 +2,6 @@
 
 int DnaSequence::Idna::autoInc = 0;
 
-void DnaSequence::setToDefualtName()
-{
-    std::stringstream ss;
-    ss << defName << idSeq;
-    std::string sService = ss.str();
-
-    nameSeq = sService;
-
-    std::cout << "nameSeq: " << nameSeq <<std::endl;
-}
-
 DnaSequence::DnaSequence(const char* const C_sequence, std::string name)
 {
     idSeq = autoInc++;

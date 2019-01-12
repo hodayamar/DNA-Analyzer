@@ -23,7 +23,6 @@ private:
     Nucleotide* sequence;
 
     void init_sequence(const char* const);
-    void setToDefualtName();
 };
 
 

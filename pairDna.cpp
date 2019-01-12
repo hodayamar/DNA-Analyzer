@@ -1,16 +1,5 @@
 #include "pairDna.h"
 
-void pairDna::setToDefualtName()
-{
-    std::stringstream ss;
-    ss << defName << idSeq;
-    std::string sService = ss.str();
-
-    nameSeq = sService;
-
-    std::cout << "nameSeq: " << nameSeq << std::endl;
-}
-
 pairDna::pairDna(IDNAp pair, std::string name)
 {
 

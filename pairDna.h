@@ -17,8 +17,6 @@ public:
 private:
 
     IDNAp m_dna;
-
-    void setToDefualtName();
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PAIRDNA_H

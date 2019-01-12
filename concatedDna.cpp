@@ -1,17 +1,6 @@
 #include "concatedDna.h"
 
 
-void concatedDna::setToDefualtName()
-{
-    std::stringstream ss;
-    ss << defName << idSeq;
-    std::string sService = ss.str();
-
-    nameSeq = sService;
-
-    std::cout << "nameSeq: " << nameSeq << std::endl;
-}
-
 concatedDna::concatedDna(IDNAp first, IDNAp second, std::string name)
 {
     m_firstDna = first;

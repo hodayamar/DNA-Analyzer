@@ -25,7 +25,7 @@ private:
     unsigned long firstLen;
     unsigned long secondLen;
     void init_sequence(const char* const);
-    void setToDefualtName();
+
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_CONCATEDDNA_H
