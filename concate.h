@@ -23,7 +23,6 @@ private:
     void setIdentifier( char ** );
     void setNameSeq( int, char ** );
     void concatAndAddingSeqToDB( memoryCtrl & );
-
 };
 
 
