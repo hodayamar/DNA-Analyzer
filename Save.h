@@ -3,15 +3,28 @@
 
 #include <cstdlib>
 #include <cstring>
-#include "Icommand.h"
+#include "commandHelper.h"
 #include "dnaWriter.h"
 
-class save : public Icommand
+class save : public commandHelper
 {
 public:
 
+    save();
     ~save();
     void run(int argc, char** argv, memoryCtrl & );
+
+private:
+
+    char * identifier;
+    IDNAp dnaToSave;
+    std::string fileName;
+
+    void setIdentifier(char **);
+    void setFileName(int, char ** );
+    void saveSeqToFile();
+
+
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_SAVE_H

@@ -1,46 +1,47 @@
 #include "Save.h"
 
+save::save()
+{
+    minNumOfElements = 1;
+    maxNumOfElements = 2;
+}
+
 save::~save()
 {
     std::cout<<"im in save dtor\n";
 }
 
-void save::run(int argc, char **argv, memoryCtrl & m_memoryCtrl)
+void save::setIdentifier( char ** argv )
 {
-    if(argc < 1)
-        std::cout<<"In order to Save we need an identifier: Id/Name  \n";
+    identifier = argv[minNumOfElements];
+}
 
+void save::setFileName( int argc, char ** argv )
+{
+    //TODO - SWITCH/CASE
+    if(argc == 2)
+        fileName = argv[maxNumOfElements];
     else
-    {
-        if((argv[1][0] != '@') && (argv[1][0] != '#'))
-            std::cout<<"Id must start with # , Name must start with @  \n";
+        fileName = dnaToSave->getNameSeq() + ".rawdna";
+}
 
-        else
-        {
-            char * tmp = argv[1];
-            IDnaPtr idna;
-            std::string fileName;
+void save::saveSeqToFile()
+{
+    DnaWriter dnaWriter( fileName, dnaToSave );
+    dnaWriter.write();
+}
 
-            if(argv[1][0] == '@')
-                idna = m_memoryCtrl.getDnaSeq(-1, ++tmp);
 
-            else
-            {
-                int dnaId;
-                dnaId = (atoi(++tmp));
-                idna = m_memoryCtrl.getDnaSeq(dnaId, "");
-            }
+void save::run( int argc, char **argv, memoryCtrl & m_memoryCtrl )
+{
+    if( wrongNumOfElements( argc, minNumOfElements, maxNumOfElements ) )
+        return;
 
-            if(argc == 3)
-                fileName = argv[2];
+    setIdentifier( argv );
 
-            else
+    dnaToSave = getSeq( identifier, m_memoryCtrl );
 
-                fileName = idna->getNameSeq() + ".rawdna";
+    setFileName( argc, argv);
 
-            DnaWriter dnaWriter(fileName,idna);
-            dnaWriter.write();
-        }
-    }
-
+    saveSeqToFile();
 }
