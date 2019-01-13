@@ -79,6 +79,12 @@ void interpreter::execCommand()
         Icommand* lenC = new length();
         lenC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+
+    else if(strcmp(m_args->argv[0], "rename") == 0)
+    {
+        Icommand* renameSeqC = new renameSeq();
+        renameSeqC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

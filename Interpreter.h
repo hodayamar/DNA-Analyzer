@@ -15,6 +15,7 @@
 #include "duplicate.h"
 #include "concate.h"
 #include "len.h"
+#include "renameDna.h"
 
 
 typedef void (*exec)(int argc, char ** argv);

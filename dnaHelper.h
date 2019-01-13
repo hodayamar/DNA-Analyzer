@@ -15,6 +15,7 @@ public:
 
     int getIdSeq()const;
     std::string getNameSeq()const;
+    void setNameSeq( std::string );
 
 protected:
 
@@ -31,5 +32,11 @@ inline std::string dnaHelper::getNameSeq()const
 {
     return nameSeq;
 }
+
+inline void dnaHelper::setNameSeq(std::string newNameSeq)
+{
+    nameSeq = newNameSeq;
+}
+
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_DNAHELPER_H
