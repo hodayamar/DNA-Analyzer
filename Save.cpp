@@ -39,6 +39,9 @@ void save::run( int argc, char **argv, memoryCtrl & m_memoryCtrl )
 
     setIdentifier( argv );
 
+    if ( wrongIdentifier ( identifier ) )
+        return;
+
     dnaToSave = getSeq( identifier, m_memoryCtrl );
 
     setFileName( argc, argv);

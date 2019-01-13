@@ -73,6 +73,12 @@ void interpreter::execCommand()
         Icommand* concateC = new concate();
         concateC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+
+    else if(strcmp(m_args->argv[0], "len") == 0)
+    {
+        Icommand* lenC = new length();
+        lenC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

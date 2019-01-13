@@ -14,6 +14,8 @@
 #include "pair.h"
 #include "duplicate.h"
 #include "concate.h"
+#include "len.h"
+
 
 typedef void (*exec)(int argc, char ** argv);
 
