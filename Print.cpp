@@ -1,14 +1,25 @@
 #include "Print.h"
 
+Print::Print()
+{
+    minNumOfElements = 1;
+    maxNumOfElements = 2;
+}
+
+
 Print::~Print()
 {
     std::cout << "im in Print dtor!!!" << std::endl;
 }
 
-void printSeq(IDNAp printedDna)
+void Print::getAndPrintSeq( memoryCtrl &  memctrl )
 {
+    IDNAp printedDna = getSeq( identifier, memctrl );
+
     int size = printedDna->getLength();
+
     std::cout << "[" << printedDna->getIdSeq() << "] " << printedDna->getNameSeq() << ": ";
+
     for(int i = 0; i<size; ++i)
     {
         std::cout << (*printedDna)[i];
@@ -16,25 +27,21 @@ void printSeq(IDNAp printedDna)
     std::cout << std::endl;
 }
 
-void Print::run(int argc, char **argv, memoryCtrl & memctrl) {
+void Print::setIdentifier( char ** argv)
+{
+    identifier = argv[minNumOfElements];
+}
 
-    if (argc != 1)
-    {
-        std::cout << "no match number of arguments" << std::endl;
+
+void Print::run( int argc, char **argv, memoryCtrl & memctrl ) {
+
+    if( wrongNumOfElements( argc, minNumOfElements, maxNumOfElements ) )
         return;
-    }
 
-    char * tmp = argv[1];
+    setIdentifier( argv );
 
-    if (tmp[0] == '#')
-    {
+    if( wrongIdentifier( identifier ) )
+        return;
 
-        IDNAp newDna = memctrl.getDnaSeq(atoi(++tmp), "");
-        printSeq(newDna);
-    }
-    else if (tmp[0] == '@')
-    {
-        IDNAp newDna = memctrl.getDnaSeq(-1, ++tmp);
-        printSeq(newDna);
-    }
+    getAndPrintSeq( memctrl );
 }

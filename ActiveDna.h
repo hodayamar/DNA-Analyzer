@@ -24,7 +24,7 @@ public:
 
     void delDnaSeq(int idIdentfier, std::string nameIdentfier);
 
-    inline bool nameIsExist(char*);
+    inline bool nameNotExist(char*);
     void showlist();
 
 private:
@@ -71,7 +71,7 @@ IDNAp activeDna::getDnaSeqByName(std::string identfier)
     return tmp;
 }
 
-bool activeDna::nameIsExist(char* key)
+bool activeDna::nameNotExist(char * key)
 {
     return seqDnaByName.find(key) == seqDnaByName.end();
 }

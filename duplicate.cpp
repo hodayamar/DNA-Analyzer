@@ -4,6 +4,7 @@ duplicate::duplicate()
 {
     minNumOfElements = 1;
     maxNumOfElements = 2;
+
 }
 
 duplicate::~duplicate()

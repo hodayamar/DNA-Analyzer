@@ -11,7 +11,7 @@ public:
 
     duplicate ();
     ~duplicate ();
-    void run(int argc, char ** argv, memoryCtrl &);
+    void run( int argc, char ** argv, memoryCtrl & );
 
 private:
 
@@ -19,9 +19,9 @@ private:
     char * identifier;
     IDNAp dna;
 
-    void setIdentifier(char **);
-    void setNameSeq(int, char ** );
-    void duplicateAndAddingSeqToDB(memoryCtrl &);
+    void setIdentifier( char ** );
+    void setNameSeq( int, char ** );
+    void duplicateAndAddingSeqToDB( memoryCtrl & );
 
 };
 

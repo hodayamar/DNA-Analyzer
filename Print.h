@@ -1,15 +1,25 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PRINT_H
 #define EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_PRINT_H
 
-#include "Icommand.h"
+#include "commandHelper.h"
 
 
-class Print : public Icommand
+class Print : public commandHelper
 {
 public:
 
+    Print();
     ~Print();
-    void run(int, char **, memoryCtrl & );
+    void run( int, char **, memoryCtrl & );
+
+private:
+
+    char * identifier;
+
+    void setIdentifier( char ** );
+    void getAndPrintSeq( memoryCtrl & );
+
+
 
 
 };

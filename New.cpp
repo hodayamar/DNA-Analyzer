@@ -1,45 +1,59 @@
 #include "New.h"
 
+New::New()
+{
+    minNumOfElements = 1;
+    maxNumOfElements = 2;
+}
 
 New::~New()
 {
     std::cout << "im in new dtor" << std::endl;
 }
 
-void New::createSeqWithDefName(char* seq, memoryCtrl & memctrl)
+void New::setNameSeq( int argc, char ** argv, memoryCtrl & memctrl )
 {
-    IDNAp newDna(new DnaSequence (seq, ""));
-    memctrl.addDnaSeq(newDna->getIdSeq(), newDna->getNameSeq(), newDna );
-    std::cout << "def name" << std::endl;
+    switch ( argc )
+    {
+        case 1:
+        {
+
+            name = "";
+            break;
+        }
+        case 2:
+        {
+            if ( ! memctrl.nameNotExist( argv[2] ) )
+                name = "";
+            else
+                name = argv[2];
+
+            break;
+        }
+    }
 }
 
-void New::createSeq(char* seq, char* keyName, memoryCtrl & memctrl)
+void New::createAndAddingSeqToDB(memoryCtrl & memctrl)
 {
-
-    IDNAp newDna(new DnaSequence (seq, keyName));
+    IDNAp newDna(new DnaSequence (seq, name));
     memctrl.addDnaSeq(newDna->getIdSeq(), newDna->getNameSeq(), newDna );
-    std::cout << "name is ---- " << keyName << std::endl;
-
 }
+
+void New::setSeq( char ** argv )
+{
+    seq = argv[minNumOfElements];
+}
+
 
 void New::run(int argc, char ** argv, memoryCtrl & memctrl)
 {
 
-    if (argc == 2)
-    {
+    if( wrongNumOfElements( argc, minNumOfElements, maxNumOfElements ) )
+        return;
 
-        char * key = argv[2];
+    setNameSeq( argc, argv, memctrl );
 
-        if ( memctrl.nameIsExist(key))
-            createSeq(argv[1], argv[2], memctrl);
-        else
-            createSeqWithDefName(argv[1], memctrl);
+    setSeq( argv );
 
-    }
-    else if (argc == 1)
-        createSeqWithDefName(argv[1], memctrl);
-
-    else
-        std::cout << "Wrong number of parameters" << std::endl;
-
+    createAndAddingSeqToDB( memctrl );
 }

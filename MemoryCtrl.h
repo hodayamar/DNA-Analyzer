@@ -10,7 +10,7 @@ public:
     void addDnaSeq(int idIdentfier, std::string nameIdentfier, IDNAp seq);
     void delDnaSeq(int idIdentfier, std::string nameIdentfier);
     IDNAp getDnaSeq(int idIdentfier, std::string nameIdentfier);
-    bool nameIsExist(char*);
+    bool nameNotExist(char*);
     void showlist();
 
 private:
@@ -18,9 +18,9 @@ private:
     activeDna m_activeDna;
 };
 
-inline bool memoryCtrl::nameIsExist(char* key)
+inline bool memoryCtrl::nameNotExist( char * key )
 {
-    return m_activeDna.nameIsExist(key);
+    return m_activeDna.nameNotExist( key );
 }
 
 inline void memoryCtrl::showlist()
