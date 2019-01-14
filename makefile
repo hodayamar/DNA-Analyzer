@@ -1,6 +1,6 @@
 TARGET=dna
 # all .cpp files in this directory are my sources
-SOURCES=$(wildcard *.cpp) $(wildcard model/*.cpp) $(wildcard view/*.cpp) $(wildcard controller/*.cpp)
+SOURCES=$(wildcard *.cpp) $(wildcard Model/*.cpp) $(wildcard View/*.cpp) $(wildcard Controller/ControllerTools/*.cpp) $(wildcard Controller/Commands/*.cpp) $(wildcard Controller/*.cpp) $(wildcard Model/ModelTools/*.cpp) $(wildcard Model/Decorators/*.cpp) $(wildcard Tools/*.cpp)
 OBJS=$(SOURCES:.cpp=.o)
 INC_DIR=../include
 CC=g++

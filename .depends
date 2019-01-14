@@ -1,55 +1,309 @@
-Interpreter.o: Interpreter.cpp Interpreter.h Cli.h parser.h Icommand.h \
- sharedPtr.h MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h \
- dnaHelper.h New.h commandHelper.h Print.h showList.h Load.h dnaReader.h \
- Save.h dnaWriter.h delete.h pair.h pairDna.h duplicate.h duplicatedDna.h \
- concate.h concatedDna.h len.h renameDna.h
-concate.o: concate.cpp concate.h commandHelper.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h \
- concatedDna.h
-dnaWriter.o: dnaWriter.cpp dnaWriter.h Idna.h Nucleotide.h sharedPtr.h
-New.o: New.cpp New.h commandHelper.h sharedPtr.h MemoryCtrl.h ActiveDna.h \
- Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
-pairDna.o: pairDna.cpp pairDna.h dnaHelper.h Idna.h Nucleotide.h \
- sharedPtr.h
-concatedDna.o: concatedDna.cpp concatedDna.h dnaHelper.h Idna.h \
- Nucleotide.h sharedPtr.h
-Save.o: Save.cpp Save.h commandHelper.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h dnaWriter.h
-memoryCtrl.o: memoryCtrl.cpp MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h \
- sharedPtr.h
-commandHelper.o: commandHelper.cpp commandHelper.h sharedPtr.h \
- MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
- Icommand.h
-Nucleotide.o: Nucleotide.cpp Nucleotide.h
-Print.o: Print.cpp Print.h commandHelper.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
-duplicate.o: duplicate.cpp duplicate.h commandHelper.h sharedPtr.h \
- MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
- Icommand.h duplicatedDna.h
-Exit.o: Exit.cpp
-Load.o: Load.cpp Load.h dnaReader.h Idna.h Nucleotide.h commandHelper.h \
- sharedPtr.h MemoryCtrl.h ActiveDna.h Dna.h dnaHelper.h Icommand.h
-pair.o: pair.cpp pair.h commandHelper.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h pairDna.h
-len.o: len.cpp len.h commandHelper.h sharedPtr.h MemoryCtrl.h ActiveDna.h \
- Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
-duplicatedDna.o: duplicatedDna.cpp duplicatedDna.h dnaHelper.h Idna.h \
- Nucleotide.h sharedPtr.h
-showList.o: showList.cpp showList.h Icommand.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h
-Cli.o: Cli.cpp Cli.h parser.h
-parser.o: parser.cpp parser.h
-ActiveDna.o: ActiveDna.cpp ActiveDna.h Idna.h Nucleotide.h sharedPtr.h
-dnaHelper.o: dnaHelper.cpp dnaHelper.h Idna.h Nucleotide.h sharedPtr.h
-Dna.o: Dna.cpp Dna.h dnaHelper.h Idna.h Nucleotide.h sharedPtr.h
-main.o: main.cpp Interpreter.h Cli.h parser.h Icommand.h sharedPtr.h \
- MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h New.h \
- commandHelper.h Print.h showList.h Load.h dnaReader.h Save.h dnaWriter.h \
- delete.h pair.h pairDna.h duplicate.h duplicatedDna.h concate.h \
- concatedDna.h len.h renameDna.h
-renameDna.o: renameDna.cpp renameDna.h commandHelper.h sharedPtr.h \
- MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
- Icommand.h
-delete.o: delete.cpp delete.h commandHelper.h sharedPtr.h MemoryCtrl.h \
- ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
-dnaReader.o: dnaReader.cpp dnaReader.h
+Cli.o: View/Cli.cpp View/Cli.h View/parser.h
+parser.o: View/parser.cpp View/parser.h
+Interpreter.o: Controller/ControllerTools/Interpreter.cpp \
+ Controller/ControllerTools/Interpreter.h \
+ Controller/ControllerTools/../../View/Cli.h \
+ Controller/ControllerTools/../../View/parser.h \
+ Controller/ControllerTools/Icommand.h \
+ Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/MemoryCtrl.h \
+ Controller/ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/ControllerTools/../Commands/New.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/commandHelper.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/Icommand.h \
+ Controller/ControllerTools/../Commands/Print.h \
+ Controller/ControllerTools/../Commands/showList.h \
+ Controller/ControllerTools/../Commands/../ControllerTools/Icommand.h \
+ Controller/ControllerTools/../Commands/Load.h \
+ Controller/ControllerTools/../Commands/../../Model/ModelTools/dnaReader.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/Idna.h \
+ Controller/ControllerTools/../Commands/Save.h \
+ Controller/ControllerTools/../Commands/../../Model/ModelTools/dnaWriter.h \
+ Controller/ControllerTools/../Commands/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/ControllerTools/../Commands/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/../Commands/delete.h \
+ Controller/ControllerTools/../Commands/pair.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/pairDna.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/dnaHelper.h \
+ Controller/ControllerTools/../Commands/duplicate.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/duplicatedDna.h \
+ Controller/ControllerTools/../Commands/concate.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/concatedDna.h \
+ Controller/ControllerTools/../Commands/len.h \
+ Controller/ControllerTools/../Commands/renameDna.h \
+ Controller/ControllerTools/../Commands/slice.h \
+ Controller/ControllerTools/../Commands/../../Model/Decorators/slicedDna.h
+commandHelper.o: Controller/ControllerTools/commandHelper.cpp \
+ Controller/ControllerTools/commandHelper.h \
+ Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/MemoryCtrl.h \
+ Controller/ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/ControllerTools/Icommand.h
+memoryCtrl.o: Controller/ControllerTools/memoryCtrl.cpp \
+ Controller/ControllerTools/MemoryCtrl.h \
+ Controller/ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h
+concate.o: Controller/Commands/concate.cpp Controller/Commands/concate.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../../Model/Decorators/concatedDna.h \
+ Controller/Commands/../../Model/Decorators/dnaHelper.h
+New.o: Controller/Commands/New.cpp Controller/Commands/New.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+slice.o: Controller/Commands/slice.cpp Controller/Commands/slice.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../../Model/Decorators/slicedDna.h \
+ Controller/Commands/../../Model/Decorators/dnaHelper.h
+Save.o: Controller/Commands/Save.cpp Controller/Commands/Save.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../../Model/ModelTools/dnaWriter.h \
+ Controller/Commands/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../../Model/ModelTools/sharedPtr.h
+Print.o: Controller/Commands/Print.cpp Controller/Commands/Print.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+duplicate.o: Controller/Commands/duplicate.cpp \
+ Controller/Commands/duplicate.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../../Model/Decorators/duplicatedDna.h \
+ Controller/Commands/../../Model/Decorators/dnaHelper.h
+Exit.o: Controller/Commands/Exit.cpp
+pair.o: Controller/Commands/pair.cpp Controller/Commands/pair.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../../Model/Decorators/pairDna.h \
+ Controller/Commands/../../Model/Decorators/dnaHelper.h
+len.o: Controller/Commands/len.cpp Controller/Commands/len.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+showList.o: Controller/Commands/showList.cpp \
+ Controller/Commands/showList.h \
+ Controller/Commands/../ControllerTools/Icommand.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h
+Load.o: Controller/Commands/Load.cpp Controller/Commands/Load.h \
+ Controller/Commands/../../Model/ModelTools/dnaReader.h \
+ Controller/Commands/../../Model/Decorators/Idna.h \
+ Controller/Commands/../../Model/Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+renameDna.o: Controller/Commands/renameDna.cpp \
+ Controller/Commands/renameDna.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+delete.o: Controller/Commands/delete.cpp Controller/Commands/delete.h \
+ Controller/Commands/../ControllerTools/commandHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/MemoryCtrl.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Controller/Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/Idna.h \
+ Controller/Commands/../ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Controller/Commands/../ControllerTools/Icommand.h
+dnaReader.o: Model/ModelTools/dnaReader.cpp Model/ModelTools/dnaReader.h
+ActiveDna.o: Model/ModelTools/ActiveDna.cpp Model/ModelTools/ActiveDna.h \
+ Model/ModelTools/../Decorators/Idna.h \
+ Model/ModelTools/../Decorators/Nucleotide.h Model/ModelTools/sharedPtr.h
+dnaWriter.o: Model/ModelTools/dnaWriter.cpp Model/ModelTools/dnaWriter.h \
+ Model/ModelTools/../Decorators/Idna.h \
+ Model/ModelTools/../Decorators/Nucleotide.h Model/ModelTools/sharedPtr.h
+concatedDna.o: Model/Decorators/concatedDna.cpp \
+ Model/Decorators/concatedDna.h Model/Decorators/dnaHelper.h \
+ Model/Decorators/Idna.h Model/Decorators/Nucleotide.h \
+ Model/Decorators/../ModelTools/sharedPtr.h
+dnaHelper.o: Model/Decorators/dnaHelper.cpp Model/Decorators/dnaHelper.h \
+ Model/Decorators/Idna.h Model/Decorators/Nucleotide.h \
+ Model/Decorators/../ModelTools/sharedPtr.h
+slicedDna.o: Model/Decorators/slicedDna.cpp Model/Decorators/slicedDna.h \
+ Model/Decorators/dnaHelper.h Model/Decorators/Idna.h \
+ Model/Decorators/Nucleotide.h Model/Decorators/../ModelTools/sharedPtr.h
+pairDna.o: Model/Decorators/pairDna.cpp Model/Decorators/pairDna.h \
+ Model/Decorators/dnaHelper.h Model/Decorators/Idna.h \
+ Model/Decorators/Nucleotide.h Model/Decorators/../ModelTools/sharedPtr.h
+duplicatedDna.o: Model/Decorators/duplicatedDna.cpp \
+ Model/Decorators/duplicatedDna.h Model/Decorators/dnaHelper.h \
+ Model/Decorators/Idna.h Model/Decorators/Nucleotide.h \
+ Model/Decorators/../ModelTools/sharedPtr.h
+Nucleotide.o: Model/Decorators/Nucleotide.cpp \
+ Model/Decorators/Nucleotide.h
+Dna.o: Model/Decorators/Dna.cpp Model/Decorators/Dna.h \
+ Model/Decorators/dnaHelper.h Model/Decorators/Idna.h \
+ Model/Decorators/Nucleotide.h Model/Decorators/../ModelTools/sharedPtr.h
+main.o: Tools/main.cpp Tools/../Controller/ControllerTools/Interpreter.h \
+ Tools/../Controller/ControllerTools/../../View/Cli.h \
+ Tools/../Controller/ControllerTools/../../View/parser.h \
+ Tools/../Controller/ControllerTools/Icommand.h \
+ Tools/../Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Tools/../Controller/ControllerTools/MemoryCtrl.h \
+ Tools/../Controller/ControllerTools/../../Model/ModelTools/ActiveDna.h \
+ Tools/../Controller/ControllerTools/../../Model/ModelTools/../Decorators/Idna.h \
+ Tools/../Controller/ControllerTools/../../Model/ModelTools/../Decorators/Nucleotide.h \
+ Tools/../Controller/ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Tools/../Controller/ControllerTools/../../Model/Decorators/Dna.h \
+ Tools/../Controller/ControllerTools/../../Model/Decorators/dnaHelper.h \
+ Tools/../Controller/ControllerTools/../../Model/Decorators/Idna.h \
+ Tools/../Controller/ControllerTools/../../Model/Decorators/../ModelTools/sharedPtr.h \
+ Tools/../Controller/ControllerTools/../../Model/Decorators/Idna.h \
+ Tools/../Controller/ControllerTools/../Commands/New.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/commandHelper.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/../../Model/ModelTools/sharedPtr.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/MemoryCtrl.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/../../Model/Decorators/Dna.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/Icommand.h \
+ Tools/../Controller/ControllerTools/../Commands/Print.h \
+ Tools/../Controller/ControllerTools/../Commands/showList.h \
+ Tools/../Controller/ControllerTools/../Commands/../ControllerTools/Icommand.h \
+ Tools/../Controller/ControllerTools/../Commands/Load.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/ModelTools/dnaReader.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/Idna.h \
+ Tools/../Controller/ControllerTools/../Commands/Save.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/ModelTools/dnaWriter.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/ModelTools/../Decorators/Idna.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/ModelTools/sharedPtr.h \
+ Tools/../Controller/ControllerTools/../Commands/delete.h \
+ Tools/../Controller/ControllerTools/../Commands/pair.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/pairDna.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/dnaHelper.h \
+ Tools/../Controller/ControllerTools/../Commands/duplicate.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/duplicatedDna.h \
+ Tools/../Controller/ControllerTools/../Commands/concate.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/concatedDna.h \
+ Tools/../Controller/ControllerTools/../Commands/len.h \
+ Tools/../Controller/ControllerTools/../Commands/renameDna.h \
+ Tools/../Controller/ControllerTools/../Commands/slice.h \
+ Tools/../Controller/ControllerTools/../Commands/../../Model/Decorators/slicedDna.h
