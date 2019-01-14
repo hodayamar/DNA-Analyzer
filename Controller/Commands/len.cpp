@@ -35,3 +35,8 @@ void length::run(int argc, char** argv, memoryCtrl & m_memctrl)
 
     printLengthOfDna( m_memctrl );
 }
+
+Icommand *  length::Create()
+{
+    return new length();
+}

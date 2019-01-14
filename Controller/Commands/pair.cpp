@@ -61,3 +61,8 @@ void pair::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
 
     pairAndAddingSeqToDB( m_memoryCtrl );
 }
+
+Icommand *  pair::Create()
+{
+    return new pair();
+}

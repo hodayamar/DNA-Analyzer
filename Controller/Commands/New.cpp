@@ -57,3 +57,8 @@ void New::run(int argc, char ** argv, memoryCtrl & memctrl)
 
     createAndAddingSeqToDB( memctrl );
 }
+
+Icommand *  New::Create()
+{
+    return new New();
+}

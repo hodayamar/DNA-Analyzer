@@ -43,3 +43,8 @@ void deleteSeq::run(int argc, char **argv, memoryCtrl & m_memoryCtrl)
     deleteSeqFromDB( m_memoryCtrl );
 
 }
+
+Icommand *  deleteSeq::Create()
+{
+    return new deleteSeq();
+}

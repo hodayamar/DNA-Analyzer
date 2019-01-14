@@ -68,3 +68,8 @@ void load::run( int argc, char ** argv, memoryCtrl & m_memctrl )
     createAndAddingSeqToDB( m_memctrl );
 }
 
+Icommand *  load::Create()
+{
+    return new load();
+}
+

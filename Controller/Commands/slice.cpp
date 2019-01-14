@@ -58,6 +58,11 @@ void Slice::setNameSeq( int argc, char ** argv )
     name = "";
 }
 
+Icommand *  Slice::Create()
+{
+    return new Slice();
+}
+
 
 
 void Slice::sliceAndAddingSeqToDB( char **argv, memoryCtrl & memctrl )

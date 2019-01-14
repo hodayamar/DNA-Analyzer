@@ -45,3 +45,8 @@ void Print::run( int argc, char **argv, memoryCtrl & memctrl ) {
 
     getAndPrintSeq( memctrl );
 }
+
+Icommand *  Print::Create()
+{
+    return new Print();
+}

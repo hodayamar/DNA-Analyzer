@@ -11,6 +11,8 @@ public:
     concate ();
     ~concate ();
     void run( int argc, char ** argv, memoryCtrl & );
+    static Icommand *  Create();
+
 
 private:
 
@@ -24,6 +26,8 @@ private:
     void setNameSeq( int, char ** );
     void concatAndAddingSeqToDB( memoryCtrl & );
 };
+
+
 
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_CONCATE_H

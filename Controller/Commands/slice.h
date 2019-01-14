@@ -13,6 +13,8 @@ public:
     Slice();
     ~Slice();
     void run( int, char **, memoryCtrl & );
+    static Icommand *  Create();
+
 
 private:
 

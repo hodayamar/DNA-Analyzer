@@ -63,3 +63,8 @@ void concate::run( int argc, char ** argv, memoryCtrl & m_memoryCtrl ) {
 
     concatAndAddingSeqToDB( m_memoryCtrl );
 }
+
+Icommand *  concate::Create()
+{
+    return new concate();
+}

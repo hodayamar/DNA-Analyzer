@@ -9,3 +9,8 @@ void showList::run(int argc, char ** argv, memoryCtrl & m_memoryCtrl)
 {
     m_memoryCtrl.showlist();
 }
+
+Icommand *  showList::Create()
+{
+    return new showList();
+}

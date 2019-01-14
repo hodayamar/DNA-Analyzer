@@ -12,6 +12,8 @@ public:
     pair ();
     ~pair ();
     void run( int argc, char ** argv, memoryCtrl & );
+    static Icommand *  Create();
+
 
 private:
 

@@ -11,6 +11,8 @@ public:
     Print();
     ~Print();
     void run( int, char **, memoryCtrl & );
+    static Icommand *  Create();
+
 
 private:
 

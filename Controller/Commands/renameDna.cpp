@@ -42,3 +42,8 @@ void renameSeq::run(int argc, char** argv, memoryCtrl & m_memctrl)
 
     renameSequence( m_memctrl );
 }
+
+Icommand *  renameSeq::Create()
+{
+    return new renameSeq();
+}

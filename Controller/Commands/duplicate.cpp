@@ -60,3 +60,8 @@ void duplicate::run( int argc, char ** argv, memoryCtrl & m_memoryCtrl )
 
     duplicateAndAddingSeqToDB( m_memoryCtrl );
 }
+
+Icommand *  duplicate::Create()
+{
+    return new duplicate();
+}

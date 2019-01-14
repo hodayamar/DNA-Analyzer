@@ -13,6 +13,8 @@ public:
     save();
     ~save();
     void run(int argc, char** argv, memoryCtrl & );
+    static Icommand *  Create();
+
 
 private:
 
