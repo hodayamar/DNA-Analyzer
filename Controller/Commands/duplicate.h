@@ -28,5 +28,4 @@ private:
 };
 
 
-
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_DUPLICATE_H

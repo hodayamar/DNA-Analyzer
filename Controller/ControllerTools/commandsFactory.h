@@ -27,18 +27,9 @@ typedef std::map<std::string, CreateCommandFn> FactoryMap;
 class commandsFactory
 {
 
-private:
-    commandsFactory();
-    commandsFactory(const commandsFactory &) { }
-    commandsFactory &operator=(const commandsFactory &) { return *this; }
-
-    FactoryMap m_FactoryMap;
-    FactoryMap::iterator getCommandObject;
-
-
 public:
-    ~commandsFactory();
 
+    ~commandsFactory();
     static commandsFactory * Get()
     {
         static commandsFactory instance;
@@ -46,7 +37,15 @@ public:
     }
 
     void Register( const char * commandName, CreateCommandFn pfnCreate );
-    Icommand *CreateCommand( const char * commandName );
+
+    Icommand * CreateCommand( const char * commandName );
+
+private:
+
+    commandsFactory();
+
+    FactoryMap m_FactoryMap;
+    FactoryMap::iterator getCommandObject;
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_HODAYAMAR_COMMANDSFACTORY_H

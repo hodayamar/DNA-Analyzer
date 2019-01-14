@@ -20,7 +20,13 @@ void interpreter::execCommand()
 {
     m_commandName = m_args->argv[0];
     m_command = commandsFactory::Get()->CreateCommand(m_commandName);
-    m_command->run(m_args->argc, m_args->argv, m_memoryCtrl);
+
+    if ( m_command )
+
+        m_command->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    else
+
+        std::cout << m_commandName << ": command not found" << std::endl;
 }
 
 

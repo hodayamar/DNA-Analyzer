@@ -49,7 +49,7 @@ void save::run( int argc, char **argv, memoryCtrl & m_memoryCtrl )
     saveSeqToFile();
 }
 
-Icommand *  save::Create()
+Icommand * save::Create()
 {
     return new save();
 }
