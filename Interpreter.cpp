@@ -85,6 +85,12 @@ void interpreter::execCommand()
         Icommand* renameSeqC = new renameSeq();
         renameSeqC->run(m_args->argc, m_args->argv, m_memoryCtrl);
     }
+
+    else if(strcmp(m_args->argv[0], "slice") == 0)
+    {
+        Icommand* sliceC = new Slice();
+        sliceC->run(m_args->argc, m_args->argv, m_memoryCtrl);
+    }
 }
 
 

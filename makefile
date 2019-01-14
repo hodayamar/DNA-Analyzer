@@ -1,11 +1,7 @@
-
 TARGET=dna
-
 # all .cpp files in this directory are my sources
 SOURCES=$(wildcard *.cpp) $(wildcard model/*.cpp) $(wildcard view/*.cpp) $(wildcard controller/*.cpp)
-
 OBJS=$(SOURCES:.cpp=.o)
-
 INC_DIR=../include
 CC=g++
 CFLAGS= -c -pedantic -Wall -Werror  -ansi -g -I$(INC_DIR)#/-Wconversion

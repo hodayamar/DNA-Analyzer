@@ -8,7 +8,7 @@
 //FIXME - add checking for the pair sequence.
 //add explicit o nocleotides.
 //set autoInc to 0 if the list is empty .
-//FIXME - deal with this ugly one - name = argv[2]!!!!
+//FIXME - deal with this ugly one - name = argv[2]!!!! - slice function
 
 int main()
 {

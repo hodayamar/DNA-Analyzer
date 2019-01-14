@@ -1,0 +1,55 @@
+Interpreter.o: Interpreter.cpp Interpreter.h Cli.h parser.h Icommand.h \
+ sharedPtr.h MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h \
+ dnaHelper.h New.h commandHelper.h Print.h showList.h Load.h dnaReader.h \
+ Save.h dnaWriter.h delete.h pair.h pairDna.h duplicate.h duplicatedDna.h \
+ concate.h concatedDna.h len.h renameDna.h
+concate.o: concate.cpp concate.h commandHelper.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h \
+ concatedDna.h
+dnaWriter.o: dnaWriter.cpp dnaWriter.h Idna.h Nucleotide.h sharedPtr.h
+New.o: New.cpp New.h commandHelper.h sharedPtr.h MemoryCtrl.h ActiveDna.h \
+ Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
+pairDna.o: pairDna.cpp pairDna.h dnaHelper.h Idna.h Nucleotide.h \
+ sharedPtr.h
+concatedDna.o: concatedDna.cpp concatedDna.h dnaHelper.h Idna.h \
+ Nucleotide.h sharedPtr.h
+Save.o: Save.cpp Save.h commandHelper.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h dnaWriter.h
+memoryCtrl.o: memoryCtrl.cpp MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h \
+ sharedPtr.h
+commandHelper.o: commandHelper.cpp commandHelper.h sharedPtr.h \
+ MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
+ Icommand.h
+Nucleotide.o: Nucleotide.cpp Nucleotide.h
+Print.o: Print.cpp Print.h commandHelper.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
+duplicate.o: duplicate.cpp duplicate.h commandHelper.h sharedPtr.h \
+ MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
+ Icommand.h duplicatedDna.h
+Exit.o: Exit.cpp
+Load.o: Load.cpp Load.h dnaReader.h Idna.h Nucleotide.h commandHelper.h \
+ sharedPtr.h MemoryCtrl.h ActiveDna.h Dna.h dnaHelper.h Icommand.h
+pair.o: pair.cpp pair.h commandHelper.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h pairDna.h
+len.o: len.cpp len.h commandHelper.h sharedPtr.h MemoryCtrl.h ActiveDna.h \
+ Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
+duplicatedDna.o: duplicatedDna.cpp duplicatedDna.h dnaHelper.h Idna.h \
+ Nucleotide.h sharedPtr.h
+showList.o: showList.cpp showList.h Icommand.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h
+Cli.o: Cli.cpp Cli.h parser.h
+parser.o: parser.cpp parser.h
+ActiveDna.o: ActiveDna.cpp ActiveDna.h Idna.h Nucleotide.h sharedPtr.h
+dnaHelper.o: dnaHelper.cpp dnaHelper.h Idna.h Nucleotide.h sharedPtr.h
+Dna.o: Dna.cpp Dna.h dnaHelper.h Idna.h Nucleotide.h sharedPtr.h
+main.o: main.cpp Interpreter.h Cli.h parser.h Icommand.h sharedPtr.h \
+ MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h New.h \
+ commandHelper.h Print.h showList.h Load.h dnaReader.h Save.h dnaWriter.h \
+ delete.h pair.h pairDna.h duplicate.h duplicatedDna.h concate.h \
+ concatedDna.h len.h renameDna.h
+renameDna.o: renameDna.cpp renameDna.h commandHelper.h sharedPtr.h \
+ MemoryCtrl.h ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h \
+ Icommand.h
+delete.o: delete.cpp delete.h commandHelper.h sharedPtr.h MemoryCtrl.h \
+ ActiveDna.h Idna.h Nucleotide.h Dna.h dnaHelper.h Icommand.h
+dnaReader.o: dnaReader.cpp dnaReader.h

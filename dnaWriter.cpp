@@ -1,6 +1,6 @@
 #include "dnaWriter.h"
 
-DnaWriter::DnaWriter(std::string file_name,IDnaPtr dna) : m_dna(dna)
+DnaWriter::DnaWriter(std::string file_name, IDnaPtr dna) : m_dna(dna)
 {
     m_filename = file_name;
 }

@@ -5,7 +5,6 @@
 #include "Nucleotide.h"
 
 
-
 class  Idna
 {
 public:

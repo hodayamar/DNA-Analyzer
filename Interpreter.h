@@ -16,7 +16,7 @@
 #include "concate.h"
 #include "len.h"
 #include "renameDna.h"
-
+#include "slice.h"
 
 typedef void (*exec)(int argc, char ** argv);
 
